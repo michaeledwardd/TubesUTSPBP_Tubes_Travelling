@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TubesPW_MehTravelling</string>
+    <string name="username">Masukkan Username</string>
+    <string name="password">Masukkan password</string>
+    <string name="register">New User? Register Now</string>
+    <string name="nama_destinasi">MALIOBORO</string>
+    <string name="alamat_destinasi">Jalan Yogyakarta</string>
+    <string name="deskripsi_destinasi">Malioboro merupakan tempat wisata</string>
+    <string name="list_destinasi">LIST DESTINASI</string>
 </resources>
