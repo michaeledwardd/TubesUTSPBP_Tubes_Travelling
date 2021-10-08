@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
-            name="pgwi" />
+            name="cst" />
         <variable
             name="activity" />
     </data>
@@ -24,31 +24,32 @@
             android:background="@color/white">
 
             <TextView
+                style="@style/TextAppearance.MaterialComponents.Headline4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/TextAppearance.MaterialComponents.Headline4"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="0dp"
                 android:layout_marginStart="28dp"
-                android:textAlignment="center"
+                android:layout_marginBottom="0dp"
                 android:text="PESAN TRAVEL"
+                android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
         </LinearLayout>
 
         <ScrollView
-            android:layout_below="@+id/navbar"
             android:layout_width="match_parent"
-            android:layout_height="600dp">
+            android:layout_height="600dp"
+            android:layout_below="@+id/navbar"
+            android:layout_marginTop="107dp">
 
             <androidx.cardview.widget.CardView
-                android:layout_below="@+id/navbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="20dp"
+                android:layout_below="@+id/navbar"
                 android:layout_marginHorizontal="20dp"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="5dp">
+                android:layout_marginVertical="20dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -57,64 +58,68 @@
                     android:orientation="vertical">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
                         android:id="@+id/twNamaPegawai"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginVertical="10dp"
                         android:hint="nama destinasi">
+
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNamaPegawai"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/etNamaPegawai"
                             android:inputType="text"
-                            android:text="@={pgwi.nama_pegawai}"/>
+                            android:text="@={cst.nama_pegawai}" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
                         android:id="@+id/twTglMasuk"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginVertical="10dp"
                         android:hint="tanggal pemesanan">
+
                         <AutoCompleteTextView
+                            android:id="@+id/etTglMasukPegawai"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/etTglMasukPegawai"
                             android:inputType="none"
-                            android:text="@={pgwi.tanggal_masuk}"
-                            android:onClick="@{activity.btnTanggalMasuk}"/>
+                            android:onClick="@{activity.btnTanggalMasuk}"
+                            android:text="@={cst.tanggal_masuk}" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
                         android:id="@+id/twNomorPokok"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginVertical="10dp"
                         android:hint="lama pemesanan">
+
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNomorPokok"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/etNomorPokok"
                             android:inputType="number"
-                            android:text="@={pgwi.nomor_pokok}"/>
+                            android:text="@={cst.nomor_pokok}" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
                         android:id="@+id/twJabatan"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginVertical="10dp"
                         android:hint="tipe pesanan">
+
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etJabatanPegawai"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/etJabatanPegawai"
                             android:inputType="text"
-                            android:text="@={pgwi.jabatan}"/>
+                            android:text="@={cst.jabatan}" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
