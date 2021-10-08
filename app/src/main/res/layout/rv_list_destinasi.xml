@@ -5,8 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="20dp"
-    android:background="@drawable/list_destinasi_1"
-    >
+    android:background="@drawable/list_destinasi_1">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -59,5 +58,4 @@
             android:textColor="@color/black"
             android:textSize="15sp" />
     </androidx.cardview.widget.CardView>
-</LinearLayout>
 </LinearLayout>
