@@ -96,14 +96,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="10dp"
-                        android:hint="lama pemesanan">
+                        android:hint="lama pemesanan ">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etNomorPokok"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="number"
-                            android:text="@={cst.nomor_pokok}" />
+                            android:text="@={cst.nomor_pokok} " />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
