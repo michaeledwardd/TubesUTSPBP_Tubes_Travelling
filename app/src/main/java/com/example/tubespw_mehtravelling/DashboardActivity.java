@@ -16,6 +16,6 @@ public class DashboardActivity extends AppCompatActivity {
     @Override
     public void btnDelete(View v)
     {
-
+            super.onCreate();
     }
 }
