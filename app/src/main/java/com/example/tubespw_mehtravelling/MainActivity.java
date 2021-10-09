@@ -31,7 +31,14 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View view)
             {
-                checkLoginStatus(Username,Password);
+                if(checkLoginStatus(Username,Password)==true)
+                {
+                    Toast.makeText(MainActivity.this, "Login berhasil", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(MainActivity.this, "Selamat anda tidurnya ditunda", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
