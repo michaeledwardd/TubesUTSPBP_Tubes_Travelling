@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tubespw_mehtravelling.Database.DatabaseRegister;
+
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity  {
     private TextView txtusername;
     private TextView txtpassword;
     private TextView register;
+    private String Username,Password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +30,7 @@ public class MainActivity extends AppCompatActivity  {
         {
             @Override
             public void onClick(View view) {
-                check();
+                checkLoginStatus(Username,Password);
             }
         });
         btnClear.setOnClickListener(new View.OnClickListener()
@@ -49,6 +52,11 @@ public class MainActivity extends AppCompatActivity  {
         });
     }
 
+    private boolean checkLoginStatus(String username, String password)
+    {
+        return DatabaseRegister.getInstance(getApplicationContext()).getDatabase().userDao().check(username,password);
+    }
+
     public void check()
     {
         String user = txtusername.getText().toString();
@@ -58,14 +66,7 @@ public class MainActivity extends AppCompatActivity  {
         {
             Toast.makeText(this, "Inputan tidak boleh kosong", Toast.LENGTH_SHORT).show();
         }
-        else if(!txtusername.getText().toString().equals("190710150"))
-        {
-            Toast.makeText(this, "Username salah", Toast.LENGTH_SHORT).show();
-        }
-        else if(!txtpassword.getText().toString().equals("hesti"))
-        {
-            Toast.makeText(this, "Password salah", Toast.LENGTH_SHORT).show();
-        }
+
         else
             {
             //    startActivity(new Intent(MainActivity.this, LoginActivity.class));
@@ -73,5 +74,9 @@ public class MainActivity extends AppCompatActivity  {
             startActivity(intent);
             this.finish();
         }
+
+
     }
+
+
 }

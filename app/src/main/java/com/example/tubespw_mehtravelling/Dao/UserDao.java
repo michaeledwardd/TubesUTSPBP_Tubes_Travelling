@@ -17,6 +17,12 @@ public interface UserDao {
     @Insert
     void insertUser(User user);
 
+    @Query("SELECT * FROM user WHERE username = :username AND password = :password")
+    boolean check(String username,String password);
+
+    @Query("SELECT nama FROM user WHERE username = :username AND password = :password")
+    boolean getUserName(String username,String password);
+
     @Update
     void updateUser(User user);
 

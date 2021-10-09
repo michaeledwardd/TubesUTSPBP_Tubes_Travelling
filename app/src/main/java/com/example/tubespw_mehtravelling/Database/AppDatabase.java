@@ -1,5 +1,7 @@
 package com.example.tubespw_mehtravelling.Database;
 
+import android.content.SharedPreferences;
+
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
 
