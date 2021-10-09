@@ -22,10 +22,12 @@ public class MainActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         txtusername = findViewById(R.id.txtusername);
         txtpassword = findViewById(R.id.txtpassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnClear = findViewById(R.id.btnClear);
+
         btnLogin.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity  {
 
     private boolean checkLoginStatus(String username, String password)
     {
-        return DatabaseRegister.getInstance(getApplicationContext()).getDatabase().userDao().check(username,password);
+        return DatabaseRegister.getInstance(getApplicationContext()).getDatabase().userDao().checkLogin(username,password);
     }
 
     public void check()
@@ -62,20 +64,18 @@ public class MainActivity extends AppCompatActivity  {
         String user = txtusername.getText().toString();
         Intent intent = new Intent(MainActivity.this,DashboardActivity.class);
 
-        if(txtusername.getText().toString().equals("") || txtpassword.getText().toString().equals("") )
-        {
-            Toast.makeText(this, "Inputan tidak boleh kosong", Toast.LENGTH_SHORT).show();
-        }
+            if(txtusername.getText().toString().equals("") || txtpassword.getText().toString().equals("") )
+            {
+                Toast.makeText(this, "Inputan tidak boleh kosong", Toast.LENGTH_SHORT).show();
+            }
 
-        else
+            else
             {
             //    startActivity(new Intent(MainActivity.this, LoginActivity.class));
             Toast.makeText(this, "Berhasil Login", Toast.LENGTH_SHORT).show();
             startActivity(intent);
             this.finish();
-        }
-
-
+            }
     }
 
 

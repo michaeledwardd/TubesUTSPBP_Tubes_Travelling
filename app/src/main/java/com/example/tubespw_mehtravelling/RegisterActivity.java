@@ -24,13 +24,10 @@ public class RegisterActivity extends AppCompatActivity {
     private Button btnSave;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.Layout.activity_registrasi);
+        setContentView(R.layout.activity_registrasi);
 
         etNama = findViewById(R.id.etNama);
         etAlamat = findViewById(R.id.etAlamat);
@@ -75,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
             protected Void doInBackground(Void... voids) {
                 User user = new User();
                 user.setNama(nama);
-                user.setalamat(alamat);
+                user.setAlamat(alamat);
                 user.setUsername(username);
                 user.setPassword(password);
 

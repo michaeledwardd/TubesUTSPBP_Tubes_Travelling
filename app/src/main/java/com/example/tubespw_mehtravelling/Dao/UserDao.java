@@ -18,7 +18,7 @@ public interface UserDao {
     void insertUser(User user);
 
     @Query("SELECT * FROM user WHERE username = :username AND password = :password")
-    boolean check(String username,String password);
+    boolean checkLogin(String username,String password);
 
     @Query("SELECT nama FROM user WHERE username = :username AND password = :password")
     boolean getUserName(String username,String password);

@@ -48,7 +48,7 @@ public class User {
         return alamat;
     }
 
-    public void setalamat(String nama)
+    public void setAlamat(String alamat)
     {
         this.alamat=alamat;
     }
