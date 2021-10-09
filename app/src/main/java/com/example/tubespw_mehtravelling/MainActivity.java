@@ -29,8 +29,10 @@ public class MainActivity extends AppCompatActivity  {
         btnLogin.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 checkLoginStatus(Username,Password);
+
             }
         });
         btnClear.setOnClickListener(new View.OnClickListener()
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity  {
         });
     }
 
-    private boolean checkLoginStatus(String username, String password)
+    public boolean checkLoginStatus(String username, String password)
     {
         return DatabaseRegister.getInstance(getApplicationContext()).getDatabase().userDao().checkLogin(username,password);
     }

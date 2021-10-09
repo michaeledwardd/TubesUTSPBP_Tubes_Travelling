@@ -6,22 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/login_1"
+    android:background="@drawable/login1"
     android:orientation="vertical"
     android:padding="40dp"
     android:id="@+id/mainLayout">
 
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:src="@drawable/logo"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"/>
-
     <EditText
         android:id="@+id/txtusername"
+        android:layout_marginTop="290dp"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:drawableStart="@drawable/ic_baseline_person_24"
