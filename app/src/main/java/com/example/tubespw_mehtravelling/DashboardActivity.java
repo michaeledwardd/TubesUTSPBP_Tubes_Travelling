@@ -13,9 +13,5 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
     }
 
-    @Override
-    public void btnDelete(View v)
-    {
-            super.onCreate();
-    }
+
 }
