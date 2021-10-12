@@ -7,6 +7,7 @@ import androidx.room.Room;
 public class DatabaseRegister {
     private Context context;
     private static DatabaseRegister databaseRegister;
+    private static String DatabaseName = "DB1234";
 
     private AppDatabase database;
 

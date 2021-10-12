@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.view.Window;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.tubespw_mehtravelling.ui.auth.LoginActivity;
+
 public class SplashScreen extends AppCompatActivity {
 
     @Override
@@ -20,7 +22,7 @@ public class SplashScreen extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 finish();
             }
         }, 3000L); //3000 L = 3 detik

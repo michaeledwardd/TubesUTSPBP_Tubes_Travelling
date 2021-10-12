@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:background="@drawable/register1"
-    tools:context=".RegisterActivity">
+    tools:context=".ui.auth.RegisterActivity">
 
         <TextView
             android:layout_marginTop="60dp"

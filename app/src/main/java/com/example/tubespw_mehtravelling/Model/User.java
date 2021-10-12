@@ -22,8 +22,18 @@ public class User {
     @ColumnInfo(name="password")
     private String password;
 
+    public User(int id, String nama, String alamat, String username, String password) {
+        this.id = id;
+        this.nama = nama;
+        this.alamat = alamat;
+        this.username = username;
+        this.password = password;
 
+    }
 
+    public User(){
+        //nothing
+    }
     public int getId()
     {
         return id;
