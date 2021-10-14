@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,6 +20,7 @@ import com.example.tubespw_mehtravelling.R;
 
 public class RVListDestinasiAdapter extends RecyclerView.Adapter<RVListDestinasiAdapter.viewHolder>{
     private final Destinasi[] listDestinasi;
+    private ImageView img_icon;
 
     public class viewHolder extends RecyclerView.ViewHolder{
         TextView tv_namadestinasi;
