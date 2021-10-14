@@ -14,9 +14,8 @@
         android:text="@string/list_destinasi"
         android:textColor="@color/black"
         android:textSize="40sp"
-        android:textStyle="bold"
+        android:textStyle="bold" />
 
-        />
     <Button
         android:id="@+id/btnback"
         android:layout_width="wrap_content"
@@ -29,7 +28,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="100dp"
-        android:id="@+id/rv_dosen"
+        android:id="@+id/rv_destinasi"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/rv_list_destinasi" />

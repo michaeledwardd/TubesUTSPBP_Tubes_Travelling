@@ -2,7 +2,6 @@ package com.example.tubespw_mehtravelling.ui.auth;
 
 import com.example.tubespw_mehtravelling.MainActivity;
 import com.example.tubespw_mehtravelling.R;
-import com.example.tubespw_mehtravelling.ui.auth.RegisterActivity;
 import com.example.tubespw_mehtravelling.Database.DatabaseRegister;
 import com.example.tubespw_mehtravelling.Model.User;
 import android.content.Intent;
@@ -11,13 +10,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tubespw_mehtravelling.Preferences.UserPreferences;
-import com.google.android.material.button.MaterialButton;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText txtUsername, txtPassword;
@@ -27,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         userPreferences = new UserPreferences(LoginActivity.this);
 
