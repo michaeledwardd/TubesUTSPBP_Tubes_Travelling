@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.example.tubespw_mehtravelling.databinding.ActivityMainBinding;
-import com.example.tubespw_mehtravelling.listDestinasi.RVListDestinasiAdapter;
+import com.example.tubespw_mehtravelling.listDestinasi.TampilDataDestinasi;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public View.OnClickListener btnListDestinasi= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent mainActivity = new Intent(MainActivity.this, RVListDestinasiAdapter.class);
+            Intent mainActivity = new Intent(MainActivity.this, TampilDataDestinasi.class);
             startActivity(mainActivity);
         }
     };
@@ -36,19 +36,19 @@ public class MainActivity extends AppCompatActivity {
             startActivity(mainActivity);
         }
     };
-//    public View.OnClickListener btnRiwayatDestinasi= new View.OnClickListener() {
-//        @Override
-//        public void onClick(View v) {
-//            Intent mainActivity = new Intent(MainActivity.this, TampilDataPesertaVaksin.class);
+    public View.OnClickListener btnRiwayatDestinasi= new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+//            Intent mainActivity = new Intent(MainActivity.this, .class);
 //            startActivity(mainActivity);
-//        }
-//    };
-//    public View.OnClickListener btnAboutUs = new View.OnClickListener() {
-//        @Override
-//        public void onClick(View v) {
-//            Intent mainActivity = new Intent(MainActivity.this, TampilDataPesertaVaksin.class);
+        }
+    };
+    public View.OnClickListener btnAboutUs = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+//            Intent mainActivity = new Intent(MainActivity.this, .class);
 //            startActivity(mainActivity);
-//        }
-//    };
+        }
+    };
 
 }
