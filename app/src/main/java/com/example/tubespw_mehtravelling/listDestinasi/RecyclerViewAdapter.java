@@ -1,12 +1,14 @@
 package com.example.tubespw_mehtravelling.listDestinasi;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -91,9 +93,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 binding.executePendingBindings();
             }
 
-            public void onClick(View view) {
-                Toast.makeText(context, "You touch me?", Toast.LENGTH_SHORT).show();
-            }
+//            @Override
+//            public void onClick(View view) {
+//                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+//                builder.setTitle("Data Dosen");
+//                builder.setMessage("Dosen yang dipilih adalah "+ binding.tvNamadestinasi.getText().toString());
+//                builder.setNegativeButton("CLOSE", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        dialogInterface.cancel();
+//                    }
+//                }) .show();
+//            }
         }
 
 }

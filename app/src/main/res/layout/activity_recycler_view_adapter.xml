@@ -83,7 +83,7 @@
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Jabatan"
+                    android:text="Deskripsi Destinasi"
                     android:textSize="14dp"
                     android:textStyle="bold"/>
                 <TextView
