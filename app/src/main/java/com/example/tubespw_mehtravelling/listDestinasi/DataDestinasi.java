@@ -8,16 +8,18 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 public class DataDestinasi {
-    private String namaDestinasi;
-    private String alamatDestinasi;
-    private String deskripsiDestinasi;
-    private String imgurl;
+    public String namaDestinasi;
+    public String alamatDestinasi;
+    public String deskripsiDestinasi;
+    public String imgURL;
 
-    public DataDestinasi(String namaDestinasi, String alamatDestinasi, String deskripsiDestinasi, String imgurl) {
+    public DataDestinasi(){}
+
+    public DataDestinasi(String namaDestinasi, String alamatDestinasi, String deskripsiDestinasi, String imgURL) {
         this.namaDestinasi = namaDestinasi;
         this.alamatDestinasi = alamatDestinasi;
         this.deskripsiDestinasi = deskripsiDestinasi;
-        this.imgurl = imgurl;
+        this.imgURL = imgURL;
     }
 
     public String getNamaDestinasi() {
@@ -44,15 +46,14 @@ public class DataDestinasi {
         this.deskripsiDestinasi = deskripsiDestinasi;
     }
 
-    public String getImgurl() {
-        return imgurl;
+    public String getImgURL() {
+        return imgURL;
     }
 
-    public void setImgurl(String imgurl) {
-        this.imgurl = imgurl;
+    public void setImgURL(String imgURL) {
+        this.imgURL = imgURL;
     }
-
-    @BindingAdapter("android:loadImage")
+    @BindingAdapter("imgProfile")
     public static void loadImage(ImageView view, String imageUrl) {
         Glide.with(view.getContext())
                 .load(imageUrl).apply(new RequestOptions())

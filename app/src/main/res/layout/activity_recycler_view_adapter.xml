@@ -1,88 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
-
-    <LinearLayout
+<layout>
+    <data>
+        <variable
+            name="dst"
+            type="com.example.tubespw_mehtravelling.listDestinasi.DataDestinasi" />
+        <variable
+            name="imgUrl"
+            type="String" />
+    </data>
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="8dp"
-        android:id="@+id/dataDestinasi"
-        >
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_marginBottom="3dp"
 
-        <ImageView
-            android:id="@+id/ProfilePicture"
-            android:layout_width="140dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="4dp"
-            android:adjustViewBounds="true"
-            android:gravity="left"
-            android:scaleType="centerInside" />
-
+        tools:context=".RecyclerViewAdapter"
+        android:id="@+id/ParentAdapter">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:orientation="horizontal">
-
+            android:layout_margin="10dp">
             <LinearLayout
-                android:id="@+id/layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:orientation="vertical">
+                android:layout_margin="5dp">
 
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:id="@+id/ivFotoProfil"
+                app:imgProfile="@{imgUrl}">
+            </ImageView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:text="Nama Destinasi"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Alamat Destinasi"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Deskripsi"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/dataPegawai"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:orientation="vertical"
-                android:paddingLeft="4dp"
-                tools:context=".unguided.TampilDataPesertaVaksin">
-
+                    android:textSize="14dp"
+                    android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/tv_namadestinasi"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:text="@{dst.namaDestinasi}"
+                    android:textSize="12dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Alamat Destinasi"
+                    android:textSize="14dp"
+                    android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/tv_alamatdestinasi"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:text="@{dst.alamatDestinasi}"
+                    android:textSize="12dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Jabatan"
+                    android:textSize="14dp"
+                    android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/tv_deskripsidestinasi"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:text="@{dst.deskripsiDestinasi}"
+                    android:textSize="12dp"/>
             </LinearLayout>
 
         </LinearLayout>
+        </LinearLayout>
 
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </layout>
