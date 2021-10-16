@@ -38,7 +38,7 @@ public class PesanFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,    ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_pesan, container, false);
         nama = view.findViewById(R.id.twnamaDestinasi);
-        tanggal = view.findViewById(R.id.twtanggalPemesanan);
+        tanggal = view.findViewById(R.id.tvDate);
         lama = view.findViewById(R.id.twlamaPesanan);
         tipe= view.findViewById(R.id.twtipePesanan);
         btnCreate= view.findViewById(R.id.btnCreate);

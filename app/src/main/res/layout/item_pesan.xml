@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
     <androidx.cardview.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_marginBottom="3dp"
-
-        tools:context=".RecyclerViewAdapter"
+        tools:context=".PesanAdapter"
         android:id="@+id/ParentAdapter">
 
         <LinearLayout
@@ -18,7 +17,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_margin="10dp">
-
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -31,17 +29,11 @@
                     android:orientation="horizontal">
                     <TextView
                         android:layout_width="100dp"
+                        android:id="@+id/tvNamaDestinasi"
                         android:layout_height="wrap_content"
                         android:text="Nama Destinasi"
                         android:textSize="14dp"
                         android:textStyle="bold"/>
-                    <TextView
-                        android:id="@+id/tvNamaDestinasi"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="7dp"
-                        android:text="@{dst.nama_Destinasi}"
-                        android:textSize="12dp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -52,14 +44,9 @@
                         android:layout_height="wrap_content"
                         android:text="Tanggal Pemesanan"
                         android:textSize="14dp"
-                        android:textStyle="bold"/>
-                    <TextView
-                        android:id="@+id/tvTanggalPemesanan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="7dp"
-                        android:text="@{dst.tanggal}"
-                        android:textSize="12dp"/>
+                        android:textStyle="bold"
+                        android:id="@+id/tvTanggalPemesanan"/>
+
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -70,14 +57,9 @@
                         android:layout_height="wrap_content"
                         android:text="Lama Pemesanan"
                         android:textSize="14dp"
-                        android:textStyle="bold"/>
-                    <TextView
-                        android:id="@+id/tvLamaPesan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="7dp"
-                        android:text="@{dst.lama}"
-                        android:textSize="12dp"/>
+                        android:textStyle="bold"
+                        android:id="@+id/tvLamaPesan"/>
+
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -85,36 +67,21 @@
                     android:orientation="horizontal">
                     <TextView
                         android:layout_width="100dp"
+                        android:id="@+id/tvTipe"
                         android:layout_height="wrap_content"
                         android:text="Tipe Pemesanan"
                         android:textSize="14dp"
                         android:textStyle="bold"/>
-                    <TextView
-                        android:id="@+id/tvTipe"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="7dp"
-                        android:text="@{dst.TipePemesanan}"
-                        android:textSize="12dp"/>
+
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:text="Total Harga"
                         android:textSize="14dp"
                         android:textStyle="bold"/>
-                    <TextView
-                        android:id="@+id/tvTotal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="7dp"
-                        android:text="@{dst.Total}"
-                        android:textSize="12dp"/>
-                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -146,4 +113,4 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-</LinearLayout>
+</layout>

@@ -9,6 +9,9 @@ import androidx.databinding.DataBindingUtil;
 
 import com.example.tubespw_mehtravelling.databinding.ActivityMainBinding;
 import com.example.tubespw_mehtravelling.listDestinasi.TampilDataDestinasi;
+import com.example.tubespw_mehtravelling.pesanDestinasi.ActivityInputPesan;
+import com.example.tubespw_mehtravelling.pesanDestinasi.PesanActivity;
+import com.example.tubespw_mehtravelling.pesanDestinasi.PesanFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -32,15 +35,15 @@ public class MainActivity extends AppCompatActivity {
     public View.OnClickListener btnPesanDestinasi = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent mainActivity = new Intent(MainActivity.this, PesanTravel.class);
+            Intent mainActivity = new Intent(MainActivity.this, ActivityInputPesan.class);
             startActivity(mainActivity);
         }
     };
     public View.OnClickListener btnRiwayatDestinasi= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-//            Intent mainActivity = new Intent(MainActivity.this, .class);
-//            startActivity(mainActivity);
+            Intent mainActivity = new Intent(MainActivity.this, PesanActivity.class);
+            startActivity(mainActivity);
         }
     };
     public View.OnClickListener btnAboutUs = new View.OnClickListener() {

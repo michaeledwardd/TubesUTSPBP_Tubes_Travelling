@@ -9,8 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".pesanDestinasi.PesanFragment"
-        android:background="@drawable/pesan">
+        tools:context=".pesanDestinasi.ActivityInputPesan"
+        android:background="@drawable/pesan"
+        >
 
         <LinearLayout
             android:id="@+id/navbar"
@@ -60,21 +61,31 @@
                         android:layout_marginVertical="10dp"
                         android:hint="nama destinasi" />
 
+<!--                    <EditText-->
+<!--                        android:id="@+id/twtanggalPemesanan"-->
+<!--                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginVertical="10dp"-->
+<!--                        android:inputType="date"-->
+<!--                        />-->
                     <EditText
-                        android:id="@+id/twtanggalPemesanan"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginVertical="10dp"
-                        android:hint="tanggal pemesanan" />
-
+                        android:hint="Select Date"
+                        android:id="@+id/tvDate"
+                        android:layout_centerHorizontal="true"
+                        android:textSize="15sp"/>
                     <EditText
                         android:id="@+id/twlamaPesanan"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="10dp"
-                        android:hint="lama pemesanan " />
+                        android:hint="lama pemesanan "
+                        android:inputType="number"
+                        />
+
 
                     <EditText
                         android:id="@+id/twtipePesanan"

@@ -2,6 +2,7 @@ package com.example.tubespw_mehtravelling.pesanDestinasi;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.widget.SearchView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +15,7 @@ import java.util.List;
 public class PesanActivity extends AppCompatActivity{
     //serupa dengan riwayat activity//
 
+    private SearchView searchView;
     private RecyclerView recyclerView;
     private SwipeRefreshLayout refreshLayout;
     private List<Pesan> pesanList;
@@ -22,15 +24,15 @@ public class PesanActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.riwayat_pemesanan);
 
 
-//        refreshLayout = findViewById(R.id.swipe_refresh);
-//        recyclerView = findViewById(R.id.user_rv);
+        refreshLayout = findViewById(R.id.swipe_refresh);
+        recyclerView = findViewById(R.id.user_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
-
+//
 //        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -49,12 +51,12 @@ public class PesanActivity extends AppCompatActivity{
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                getUsers();
+                getPesans();
                 refreshLayout.setRefreshing(false);
             }
         });
 
-        getUsers();
+        getPesans();
 
 //        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
 //
@@ -72,8 +74,8 @@ public class PesanActivity extends AppCompatActivity{
 //        });
     }
 
-    private void getUsers(){
-        class GetUsers extends AsyncTask<Void, Void, List<Pesan>> {
+    private void getPesans(){
+        class GetPesans extends AsyncTask<Void, Void, List<Pesan>> {
 
             @Override
             protected List<Pesan> doInBackground(Void... voids) {
@@ -97,7 +99,7 @@ public class PesanActivity extends AppCompatActivity{
             }
         }
 
-        GetUsers get = new GetUsers();
+        GetPesans get = new GetPesans();
         get.execute();
     }
 }

@@ -24,28 +24,25 @@ public class PesanAdapter extends RecyclerView.Adapter<PesanAdapter.PesanViewHol
     private Context context;
     private List<Pesan> pesanList,pesanListCopy;
 
-
     public PesanAdapter(Context context, List<Pesan> pesanList) {
         this.context = context;
         this.pesanList = pesanList;
         pesanListCopy = new ArrayList<>(pesanList);
         notifyDataSetChanged();
     }
-
     @NonNull
     @Override
     public PesanViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_pesan, parent, false);
         return new PesanViewHolder(view);
     }
-
     @Override
     public void onBindViewHolder(@NonNull PesanViewHolder holder, int position) {
         Pesan pesan = pesanList.get(position);
         holder.textViewNamaDestinasi.setText(pesan.getNama());
         holder.textViewTanggalPemesan.setText(pesan.getTanggal());
         holder.textViewLamaPemesan.setText(String.valueOf(pesan.getLama()));
-        holder.textViewTipePesanan.setText(String.valueOf(pesan.getTipe()));
+        holder.textViewTipePesanan.setText(pesan.getTipe());
     }
 
     @Override
@@ -64,7 +61,7 @@ public class PesanAdapter extends RecyclerView.Adapter<PesanAdapter.PesanViewHol
         public PesanViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewNamaDestinasi = itemView.findViewById(R.id.twnamaDestinasi);
-            textViewTanggalPemesan = itemView.findViewById(R.id.twtanggalPemesanan);
+            textViewTanggalPemesan = itemView.findViewById(R.id.tvDate);
             textViewLamaPemesan = itemView.findViewById(R.id.twlamaPesanan);
             textViewTipePesanan = itemView.findViewById(R.id.twtipePesanan);
             itemView.setOnClickListener(this);
