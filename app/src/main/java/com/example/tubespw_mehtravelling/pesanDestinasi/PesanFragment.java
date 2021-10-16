@@ -43,13 +43,6 @@ public class PesanFragment extends Fragment {
         tipe= view.findViewById(R.id.twtipePesanan);
         btnCreate= view.findViewById(R.id.btnCreate);
         btnCancel = view.findViewById(R.id.btnCancel);
-
-        namaLayout = view.findViewById(R.id.input_nama_layout);
-        tanggalLayout =  view.findViewById(R.id.input_tanggal_layout);
-        lamaLayout = view.findViewById(R.id.input_lama_layout);
-        tipeLayout = view.findViewById(R.id.input_tipe_layout);
-
-        fab = getActivity().findViewById(R.id.fab);
         return view;
     }
 
@@ -76,25 +69,28 @@ public class PesanFragment extends Fragment {
 
     private void addPesan(){
         final int lamaAdd;
+        final String namaAdd = null;
+        final String tipeAdd = null;
+        final String tanggalAdd = null;
 
-        final String nama = nama.getText().toString();
+        final String namaTemp = nama.getText().toString();
         final String lamaTemp = lama.getText().toString();
-        final String tipe = tipe.getText().toString();
-        final String tanggal = tanggal.getText().toString();
+        final String tipeTemp = tipe.getText().toString();
+        final String tanggalTemp = tanggal.getText().toString();
 
 
-        if(nama.isEmpty()) {
+        if(namaTemp.isEmpty()) {
             namaLayout.setError("Please fill nama correctly");;
         } else {
             namaLayout.setError(null);
         }
 
-        if (tipe.isEmpty()) {
+        if (tipeTemp.isEmpty()) {
             tipeLayout.setError("Please fill tipe pemesanan correctly");
         } else {
             tipeLayout.setError(null);
         }
-        if (tanggal.isEmpty()) {
+        if (tanggalTemp.isEmpty()) {
             tanggalLayout.setError("Please fill tanggal pemesanan correctly");
         } else {
             tanggalLayout.setError(null);
@@ -108,17 +104,17 @@ public class PesanFragment extends Fragment {
             lamaAdd = Integer.parseInt(lama.getText().toString());
         }
 
-        if(!nama.isEmpty() && !tipe.isEmpty() && !lamaTemp.isEmpty() && !tanggal.isEmpty()) {
+        if(!namaTemp.isEmpty() && !tipeTemp.isEmpty() && !lamaTemp.isEmpty() && !tanggalTemp.isEmpty()) {
 
             class AddPesan extends AsyncTask<Void, Void, Void> {
 
                 @Override
                 protected Void doInBackground(Void... voids) {
                     Pesan pesan = new Pesan();
-                    pesan.setNama(nama);
+                    pesan.setNama(namaAdd);
                     pesan.setLama(lamaAdd);
-                    pesan.setTipe(tipe);
-                    pesan.setTanggal(tanggal);
+                    pesan.setTipe(tipeAdd);
+                    pesan.setTanggal(tanggalAdd);
 
                     DatabasePesanan.getInstance(getActivity().getApplicationContext()).getDatabase()
                             .pesanDao()

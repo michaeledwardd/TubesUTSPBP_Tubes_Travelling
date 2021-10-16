@@ -35,7 +35,7 @@ public class PesanAdapter extends RecyclerView.Adapter<PesanAdapter.PesanViewHol
     @NonNull
     @Override
     public PesanViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_user, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_pesan, parent, false);
         return new PesanViewHolder(view);
     }
 
@@ -63,10 +63,10 @@ public class PesanAdapter extends RecyclerView.Adapter<PesanAdapter.PesanViewHol
 
         public PesanViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewNamaDestinasi = itemView.findViewById(R.id.tv_nama);
-            textViewTanggalPemesan = itemView.findViewById(R.id.tv_tanggal);
-            textViewLamaPemesan = itemView.findViewById(R.id.tv_lama);
-            textViewTipePesanan = itemView.findViewById(R.id.tv_tipe);
+            textViewNamaDestinasi = itemView.findViewById(R.id.twnamaDestinasi);
+            textViewTanggalPemesan = itemView.findViewById(R.id.twtanggalPemesanan);
+            textViewLamaPemesan = itemView.findViewById(R.id.twlamaPesanan);
+            textViewTipePesanan = itemView.findViewById(R.id.twtipePesanan);
             itemView.setOnClickListener(this);
         }
 
