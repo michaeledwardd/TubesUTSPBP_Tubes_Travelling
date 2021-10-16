@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,19 +24,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private Context context;
     private List<DataDestinasi> listdestinasi;
+    LinearLayout tampildatadestinasi;
 
     public RecyclerViewAdapter(Context context, List<DataDestinasi> listdestinasi) {
         this.context = context;
         this.listdestinasi = listdestinasi;
     }
 
-//    @NonNull
-//    @Override
-//    public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-//        ActivityRecyclerViewAdapterBinding binding = DataBindingUtil.inflate(inflater, R.layout.activity_recycler_view_adapter, parent, false);
-//        return new viewHolder(binding);
-//    }
+
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -44,67 +40,38 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return new viewHolder(binding);
     }
 
-//    @Override
-//    public void onBindViewHolder(@NonNull viewHolder holder, int position) {
-//
-//        Glide.with(holder.binding.getRoot())
-//                .load(listdestinasi.get(position).getImgurl())
-//
-//                .into(holder.binding.ProfilePicture);
-//
-//        holder.binding.tvNamadestinasi.setText(listdestinasi.get(position).getNamaDestinasi());
-//        holder.binding.tvAlamatdestinasi.setText(listdestinasi.get(position).getAlamatDestinasi());
-//        holder.binding.tvDeskripsidestinasi.setText(listdestinasi.get(position).getAlamatDestinasi());
-//    }
+
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, final int position) {
         final DataDestinasi dst = listdestinasi.get(position);
         holder.bind(dst);
-}
-//    @Override
-//    public int getItemCount() {
-//        return listdestinasi.size();
-//    }
-//
-//    public class viewHolder extends RecyclerView.ViewHolder {
-//        private ActivityRecyclerViewAdapterBinding binding;
-//
-//        public viewHolder(@NonNull ActivityRecyclerViewAdapterBinding binding) {
-//            super(binding.getRoot());
-//            this.binding = binding;
-//        }
-//    }
+    }
+
+
+
+
     @Override
     public int getItemCount() {
         return listdestinasi.size();
     }
 
-        public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-            public ActivityRecyclerViewAdapterBinding binding;
+    public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        public ActivityRecyclerViewAdapterBinding binding;
 
-            public viewHolder(@NonNull ActivityRecyclerViewAdapterBinding binding){
-                super(binding.getRoot());
-                this.binding = binding;
-            }
-
-            public void bind(DataDestinasi Destinasi) {
-                binding.setDst(Destinasi);
-                binding.setImgUrl(Destinasi.imgURL);
-                binding.executePendingBindings();
-            }
-
-//            @Override
-//            public void onClick(View view) {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-//                builder.setTitle("Data Dosen");
-//                builder.setMessage("Dosen yang dipilih adalah "+ binding.tvNamadestinasi.getText().toString());
-//                builder.setNegativeButton("CLOSE", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        dialogInterface.cancel();
-//                    }
-//                }) .show();
-//            }
+        public viewHolder(@NonNull ActivityRecyclerViewAdapterBinding binding){
+            super(binding.getRoot());
+            this.binding = binding;
         }
 
+        public void bind(DataDestinasi Destinasi) {
+            binding.setDst(Destinasi);
+            binding.setImgUrl(Destinasi.imgURL);
+            binding.executePendingBindings();
+        }
+        
+        @Override
+        public void onClick(View view) {
+
+        }
+    }
 }
