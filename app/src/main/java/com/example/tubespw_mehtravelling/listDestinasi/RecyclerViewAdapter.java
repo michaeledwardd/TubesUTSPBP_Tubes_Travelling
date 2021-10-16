@@ -1,12 +1,15 @@
 package com.example.tubespw_mehtravelling.listDestinasi;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,13 +24,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private Context context;
     private List<DataDestinasi> listdestinasi;
+    LinearLayout tampildatadestinasi;
 
     public RecyclerViewAdapter(Context context, List<DataDestinasi> listdestinasi) {
         this.context = context;
         this.listdestinasi = listdestinasi;
     }
 
-//    @NonNull
+    //    @NonNull
 //    @Override
 //    public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 //        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
@@ -42,7 +46,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return new viewHolder(binding);
     }
 
-//    @Override
+    //    @Override
 //    public void onBindViewHolder(@NonNull viewHolder holder, int position) {
 //
 //        Glide.with(holder.binding.getRoot())
@@ -58,8 +62,26 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull viewHolder holder, final int position) {
         final DataDestinasi dst = listdestinasi.get(position);
         holder.bind(dst);
-}
-//    @Override
+//        holder.binding.tampildatadestinasi.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+//                builder.setTitle("Data Destinasi");
+//                builder.setMessage("Destinasi yang dipilih adalah "+ holder.binding.tvNamadestinasi.getText().toString());
+//                builder.setNegativeButton("CLOSE", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        dialogInterface.cancel();
+//                    }
+//                }) .show();
+//            }
+//        }
+//        );
+    }
+
+
+
+    //    @Override
 //    public int getItemCount() {
 //        return listdestinasi.size();
 //    }
@@ -77,23 +99,24 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return listdestinasi.size();
     }
 
-        public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-            public ActivityRecyclerViewAdapterBinding binding;
+    public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        public ActivityRecyclerViewAdapterBinding binding;
 
-            public viewHolder(@NonNull ActivityRecyclerViewAdapterBinding binding){
-                super(binding.getRoot());
-                this.binding = binding;
-            }
-
-            public void bind(DataDestinasi Destinasi) {
-                binding.setDst(Destinasi);
-                binding.setImgUrl(Destinasi.imgURL);
-                binding.executePendingBindings();
-            }
-
-            public void onClick(View view) {
-                Toast.makeText(context, "You touch me?", Toast.LENGTH_SHORT).show();
-            }
+        public viewHolder(@NonNull ActivityRecyclerViewAdapterBinding binding){
+            super(binding.getRoot());
+            this.binding = binding;
         }
 
+        public void bind(DataDestinasi Destinasi) {
+            binding.setDst(Destinasi);
+            binding.setImgUrl(Destinasi.imgURL);
+            binding.executePendingBindings();
+        }
+
+
+        @Override
+        public void onClick(View view) {
+
+        }
+    }
 }
