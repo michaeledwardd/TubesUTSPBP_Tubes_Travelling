@@ -31,7 +31,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.listdestinasi = listdestinasi;
     }
 
-
+    //    @NonNull
+//    @Override
+//    public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+//        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+//        ActivityRecyclerViewAdapterBinding binding = DataBindingUtil.inflate(inflater, R.layout.activity_recycler_view_adapter, parent, false);
+//        return new viewHolder(binding);
+//    }
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -40,16 +46,54 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return new viewHolder(binding);
     }
 
-
+    //    @Override
+//    public void onBindViewHolder(@NonNull viewHolder holder, int position) {
+//
+//        Glide.with(holder.binding.getRoot())
+//                .load(listdestinasi.get(position).getImgurl())
+//
+//                .into(holder.binding.ProfilePicture);
+//
+//        holder.binding.tvNamadestinasi.setText(listdestinasi.get(position).getNamaDestinasi());
+//        holder.binding.tvAlamatdestinasi.setText(listdestinasi.get(position).getAlamatDestinasi());
+//        holder.binding.tvDeskripsidestinasi.setText(listdestinasi.get(position).getAlamatDestinasi());
+//    }
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, final int position) {
         final DataDestinasi dst = listdestinasi.get(position);
         holder.bind(dst);
+//        holder.binding.tampildatadestinasi.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+//                builder.setTitle("Data Destinasi");
+//                builder.setMessage("Destinasi yang dipilih adalah "+ holder.binding.tvNamadestinasi.getText().toString());
+//                builder.setNegativeButton("CLOSE", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        dialogInterface.cancel();
+//                    }
+//                }) .show();
+//            }
+//        }
+//        );
     }
 
 
 
-
+    //    @Override
+//    public int getItemCount() {
+//        return listdestinasi.size();
+//    }
+//
+//    public class viewHolder extends RecyclerView.ViewHolder {
+//        private ActivityRecyclerViewAdapterBinding binding;
+//
+//        public viewHolder(@NonNull ActivityRecyclerViewAdapterBinding binding) {
+//            super(binding.getRoot());
+//            this.binding = binding;
+//        }
+//    }
     @Override
     public int getItemCount() {
         return listdestinasi.size();
@@ -68,7 +112,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             binding.setImgUrl(Destinasi.imgURL);
             binding.executePendingBindings();
         }
-        
+
+
         @Override
         public void onClick(View view) {
 
