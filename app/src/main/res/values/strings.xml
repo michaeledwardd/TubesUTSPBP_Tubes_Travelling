@@ -7,5 +7,11 @@
     <string name="alamat_destinasi">Jalan Yogyakarta</string>
     <string name="deskripsi_destinasi">Malioboro merupakan tempat wisata</string>
     <string name="list_destinasi">LIST DESTINASI</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="namaInputan">Nama Destinasi</string>
+    <string name="tanggalInputan">Tanggal Pemesanan</string>
+    <string name="lamaInputan">Lama Pesanan</string>
+    <string name="tipeInputan">Tipe Pesanan</string>
 
 </resources>

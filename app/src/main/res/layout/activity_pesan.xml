@@ -6,10 +6,10 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="629dp"
+        android:background="@drawable/pesan"
         android:orientation="vertical"
-        tools:context=".PesanTravel"
-        android:background="@drawable/pesan">
+        tools:context=".pesanDestinasi.PesanFragment">
 
         <LinearLayout
             android:id="@+id/navbar"
@@ -30,64 +30,73 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <ScrollView
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_nama_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="600dp"
-            android:layout_below="@+id/navbar"
-            android:layout_marginTop="107dp">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:errorEnabled="true">
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/twnamaDestinasi"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/navbar"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="20dp"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="6dp">
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:hint="@string/namaInputan"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="20dp"
-                    android:orientation="vertical">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_tanggal_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:errorEnabled="true">
 
-                    <EditText
-                        android:id="@+id/twnamaDestinasi"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="10dp"
-                        android:hint="nama destinasi" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/twtanggalPemesanan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:hint="@string/tanggalInputan"
+                android:inputType="date" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                    <EditText
-                        android:id="@+id/twtanggalPemesanan"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="10dp"
-                        android:hint="tanggal pemesanan" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_lama_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:errorEnabled="true">
 
-                    <EditText
-                        android:id="@+id/twlamaPesanan"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="10dp"
-                        android:hint="lama pemesanan " />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/twlamaPesanan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:hint="@string/lamaInputan"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                    <EditText
-                        android:id="@+id/twtipePesanan"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="10dp"
-                        android:hint="tipe pesanan" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_tipe_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:errorEnabled="true">
 
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-        </ScrollView>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/twtipePesanan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:hint="@string/tipeInputan"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <RelativeLayout
             android:id="@+id/footer"

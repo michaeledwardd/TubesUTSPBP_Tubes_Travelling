@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/list_destinasi_1"
-        >
-
+        android:background="@drawable/list_destinasi_1">
 
         <TextView
+            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="@string/list_destinasi"
             android:textColor="@color/black"
-            android:textSize="40sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <Button
@@ -23,11 +24,12 @@
             android:layout_weight="1"
             android:text="back"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
             android:layout_gravity="right"
             android:backgroundTint="#D11616" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="65dp"
             android:id="@+id/rv_destinasi"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
