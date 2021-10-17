@@ -66,7 +66,6 @@ public class PesanFragment extends Fragment {
             }
         });
     }
-
     private void addPesan(){
         final int lamaAdd;
         final String namaAdd = null;

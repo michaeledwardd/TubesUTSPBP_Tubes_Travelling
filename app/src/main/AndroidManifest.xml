@@ -45,7 +45,7 @@
             android:name=".pesanDestinasi.PesanActivity"
             android:exported="true">
         </activity>
-
+        <receiver android:name=".PushNotif.NotificationReceiver"/>
 
     </application>
 
