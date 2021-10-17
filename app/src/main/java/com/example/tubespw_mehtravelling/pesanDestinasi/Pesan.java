@@ -14,6 +14,9 @@ public class Pesan implements Serializable {
     @ColumnInfo(name = "nama")
     public String nama;
 
+//    @ColumnInfo(name = "status")
+//    public String status;
+
     @ColumnInfo(name = "tanggal")
     public String tanggal;
 
@@ -22,6 +25,18 @@ public class Pesan implements Serializable {
 
     @ColumnInfo(name = "tipe")
     public String tipe;
+
+    public Pesan(String nama, String tanggal,int lama, String tipe) {
+        this.nama = nama;
+//        this.status = "belum";
+        this.tanggal = tanggal;
+        this.lama=lama;
+        this.tipe = tipe;
+    }
+    public Pesan()
+    {
+
+    }
 
     public int getId() {
         return id;
@@ -40,6 +55,14 @@ public class Pesan implements Serializable {
     {
         this.nama = nama;
     }
+
+//    public String getStatus() {
+//        return status;
+//    }
+//
+//    public void setStatus(String status) {
+//        this.status = status;
+//    }
 
     public String getTanggal() {
         return tanggal;

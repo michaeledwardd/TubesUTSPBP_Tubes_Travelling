@@ -7,15 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.example.tubespw_mehtravelling.R;
-import com.example.tubespw_mehtravelling.pesanDestinasi.UpdateFragment;
-import com.example.tubespw_mehtravelling.pesanDestinasi.Pesan;
+import com.example.tubespw_mehtravelling.UpdateFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,10 +57,10 @@ public class PesanAdapter extends RecyclerView.Adapter<PesanAdapter.PesanViewHol
 
         public PesanViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewNamaDestinasi = itemView.findViewById(R.id.twnamaDestinasi);
-            textViewTanggalPemesan = itemView.findViewById(R.id.tvDate);
-            textViewLamaPemesan = itemView.findViewById(R.id.twlamaPesanan);
-            textViewTipePesanan = itemView.findViewById(R.id.twtipePesanan);
+            textViewNamaDestinasi = itemView.findViewById(R.id.tvNamaDestinasi);
+            textViewTanggalPemesan = itemView.findViewById(R.id.tvTanggalPemesanan);
+            textViewLamaPemesan = itemView.findViewById(R.id.tvLamaPesan);
+            textViewTipePesanan = itemView.findViewById(R.id.tvTipe);
             itemView.setOnClickListener(this);
         }
 
@@ -82,7 +79,6 @@ public class PesanAdapter extends RecyclerView.Adapter<PesanAdapter.PesanViewHol
                     .commit();
         }
     }
-
     public void filter(String text) {
         pesanList.clear();
         if(text.equals("")){

@@ -71,7 +71,6 @@ public class ActivityInputPesan extends AppCompatActivity {
                 int year = cal.get(Calendar.YEAR);
                 int month = cal.get(Calendar.MONTH);
                 int day = cal.get(Calendar.DAY_OF_MONTH);
-
                 DatePickerDialog dialog = new DatePickerDialog(
                         ActivityInputPesan.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
@@ -81,13 +80,11 @@ public class ActivityInputPesan extends AppCompatActivity {
                 dialog.show();
             }
         });
-
         mDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 month = month + 1;
                 Log.d(TAG, "onDateSet: mm/dd/yyy: " + month + "/" + day + "/" + year);
-
                 String date = month + "/" + day + "/" + year;
                 mDisplayDate.setText(date);
             }

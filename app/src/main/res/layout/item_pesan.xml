@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    >
-    <androidx.cardview.widget.CardView
 
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_marginBottom="3dp"
-        tools:context=".PesanAdapter"
-        android:id="@+id/ParentAdapter">
+        android:id="@+id/ParentAdapter"
+
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -75,12 +73,12 @@
 
                 </LinearLayout>
 
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:text="Total Harga"
-                        android:textSize="14dp"
-                        android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Total Harga"
+                    android:textSize="14dp"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
 
@@ -91,15 +89,7 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="50dp">
 
-                <ImageButton
-                    android:layout_marginLeft="50dp"
-                    android:id="@+id/btnDelete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:backgroundTint="#EF5350"
-                    android:src="@drawable/ic_baseline_delete_24"
-                    />
+
 
                 <ImageButton
                     android:id="@+id/btnEdit"
@@ -113,4 +103,3 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-</layout>
