@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "985371946853",
+    "project_id": "tubespw-mehtravelling",
+    "storage_bucket": "tubespw-mehtravelling.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985371946853:android:775479017eebd015f6bb8c",
+        "android_client_info": {
+          "package_name": "com.example.tubespw_mehtravelling"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985371946853-21h4b83d8qhm74m0mvb018ubiamjluf9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOuVxVKONcfgqQOrOIdxsT9flyrOxEB_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985371946853-21h4b83d8qhm74m0mvb018ubiamjluf9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
