@@ -72,6 +72,13 @@ public class MainActivity extends AppCompatActivity {
 //            startActivity(mainActivity);
         }
     };
+    public View.OnClickListener btnLokasi= new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent mainActivity = new Intent(MainActivity.this, LokasiActivity.class);
+            startActivity(mainActivity);
+        }
+    };
 
     public View.OnClickListener btnLogout= new View.OnClickListener() {
         @Override

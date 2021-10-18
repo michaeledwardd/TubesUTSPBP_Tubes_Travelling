@@ -66,10 +66,10 @@ public class RegisterActivity extends AppCompatActivity {
                     PendingIntent contentIntent = PendingIntent.getActivity(RegisterActivity.this, 0, activityIntent, 0);
                     Bitmap picture = BitmapFactory.decodeResource(getResources(), R.drawable.logo);
                     Notification notification = new NotificationCompat.Builder(RegisterActivity.this, CHANNEL_1_ID)
-                            .setSmallIcon(R.drawable.ic_baseline_looks_one_24)
+                            .setSmallIcon(R.drawable.ic_baseline_hotel_24)
                             .setContentTitle("MEH TRAVELLING")
                             .setLargeIcon(picture)
-                            .setContentText("REGISTER SUKSES")
+                            .setContentText("GET READY FOR 10.10 TRAVELLING VOUCHER PARTY")
                             .setStyle(new NotificationCompat.BigPictureStyle()
                                     .bigPicture(picture)
                                     .bigLargeIcon(null))
