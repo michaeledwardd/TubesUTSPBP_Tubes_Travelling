@@ -76,7 +76,7 @@
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="90dp"
-                                android:background="@drawable/Edward" />
+                                android:background="@drawable/edward" />
 
                             <TextView
                                 android:layout_width="110dp"
@@ -112,7 +112,7 @@
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:background="@drawable/Marsha" />
+                                android:background="@drawable/marsha" />
 
                             <TextView
                                 android:layout_width="110dp"
@@ -149,7 +149,7 @@
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="90dp"
-                                android:background="@drawable/Hesti" />
+                                android:background="@drawable/hesti" />
 
                             <TextView
                                 android:layout_width="110dp"
