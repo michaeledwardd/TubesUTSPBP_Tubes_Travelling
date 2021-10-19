@@ -247,43 +247,6 @@
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/btnLogout"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_rowWeight="1"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="12dp"
-                        android:clickable="true"
-                        android:onClick="@{activity.btnLogout}"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        app:cardBackgroundColor="#6C9C5F"
-                        app:cardCornerRadius="6dp"
-                        app:cardElevation="6dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <ImageView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                android:background="@drawable/ic_baseline_arrow_circle_left_24" />
-
-                            <TextView
-                                android:layout_width="110dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="LOGOUT"
-                                android:textAlignment="center"
-                                android:textColor="@color/black"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
                 </GridLayout>
             </ScrollView>
 

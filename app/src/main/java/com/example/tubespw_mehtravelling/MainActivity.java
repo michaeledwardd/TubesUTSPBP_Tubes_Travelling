@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             //  Keluar dari aplikasi
-                            finishAndRemoveTask();
+                           finishAndRemoveTask();
                         }
                     })
                     .show();
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
     public View.OnClickListener btnAboutUs = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-//            Intent mainActivity = new Intent(MainActivity.this, .class);
+            Intent mainActivity = new Intent(MainActivity.this, AboutUs.class);
 //            startActivity(mainActivity);
         }
     };
@@ -114,13 +114,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    public View.OnClickListener btnLogout= new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent mainActivity = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(mainActivity);
-        }
-    };
+
 
 //    public View.OnClickListener btnLogout= new View.OnClickListener() {
 //        @Override
