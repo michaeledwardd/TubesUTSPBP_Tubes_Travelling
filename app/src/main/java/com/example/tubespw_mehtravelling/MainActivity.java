@@ -1,11 +1,17 @@
 package com.example.tubespw_mehtravelling;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
@@ -22,12 +28,14 @@ import com.example.tubespw_mehtravelling.ui.auth.RegisterActivity;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
-    UserPreferences userPreferences=null;
+    UserPreferences userPreferences = null;
 //    Button btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setActivity(this);
 
@@ -41,6 +49,32 @@ public class MainActivity extends AppCompatActivity {
 //                checkLogin();
 //            }
 //        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Disini kita menghubungkan menu yang telah kita buat dengan activity ini
+        MenuInflater menuInflater = new MenuInflater(this);
+        menuInflater.inflate(R.menu.home_menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.menu_exit) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Are you sure want to exit?")
+                    .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            //  Keluar dari aplikasi
+                            finishAndRemoveTask();
+                        }
+                    })
+                    .show();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public View.OnClickListener btnListDestinasi= new View.OnClickListener() {
