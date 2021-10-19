@@ -83,21 +83,29 @@ public class MainActivity extends AppCompatActivity {
     public View.OnClickListener btnLogout= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-//            Intent mainActivity = new Intent(MainActivity.this, RegisterActivity.class);
-//            startActivity(mainActivity);
-//            finish();
-            userPreferences.logout();
-            Toast.makeText(MainActivity.this, "Baiii baiii", Toast.LENGTH_SHORT).show();
-            checkLogin();
+            Intent mainActivity = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(mainActivity);
         }
     };
-    private void checkLogin(){
-        /* this function will check if user login , akan memunculkan toast jika tidak redirect ke login activity */
-        if(!userPreferences.checkLogin()){
-            startActivity(new Intent(MainActivity.this, LoginActivity.class));
-            finish();
-        }else {
-            Toast.makeText(MainActivity.this, "Welcome back !", Toast.LENGTH_SHORT).show();
-        }
-    }
+
+//    public View.OnClickListener btnLogout= new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+////            Intent mainActivity = new Intent(MainActivity.this, RegisterActivity.class);
+////            startActivity(mainActivity);
+////            finish();
+//            userPreferences.logout();
+//            Toast.makeText(MainActivity.this, "Baiii baiii", Toast.LENGTH_SHORT).show();
+//            checkLogin();
+//        }
+//    };
+//    private void checkLogin(){
+//        /* this function will check if user login , akan memunculkan toast jika tidak redirect ke login activity */
+//        if(!userPreferences.checkLogin()){
+//            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+//            finish();
+//        }else {
+//            Toast.makeText(MainActivity.this, "Welcome back !", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 }
