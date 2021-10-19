@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent mainActivity = new Intent(MainActivity.this, AboutUs.class);
-//            startActivity(mainActivity);
+           startActivity(mainActivity);
         }
     };
     public View.OnClickListener btnLokasi= new View.OnClickListener() {
