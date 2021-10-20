@@ -28,7 +28,7 @@ public class UpdateFragment extends Fragment {
 
 //    TextInputLayout  nameLayout, tipeLayout;
     EditText nama, tipe;
-    Button saveBtn, deleteBtn, cancelBtn;
+    Button btnSave, deleteBtn, cancelBtn;
     Pesan pesan;
 
     public UpdateFragment() {
@@ -43,7 +43,7 @@ public class UpdateFragment extends Fragment {
         nama = view.findViewById(R.id.etnamaDestinasi);
         tipe = view.findViewById(R.id.etTipe);
 
-        saveBtn = view.findViewById(R.id.btnSave);
+        btnSave = view.findViewById(R.id.btnSave);
         deleteBtn = view.findViewById(R.id.btnDelete);
         cancelBtn = view.findViewById(R.id.btnCancel);
 //
@@ -68,7 +68,7 @@ public class UpdateFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        saveBtn.setOnClickListener(new View.OnClickListener() {
+        btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!nama.getText().toString().equals("")) {
@@ -85,32 +85,34 @@ public class UpdateFragment extends Fragment {
 
                     tipe.setError("Please fill age correctly");
                 }
-
+                if(!nama.getText().toString().equals("") && !tipe.getText().toString().equals("")) {
+                    update(pesan);
+                }
             }
         });
 
-//        deleteBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-//                builder.setMessage("Are you sure to delete?")
-//                        .setNegativeButton("no", new DialogInterface.OnClickListener() {
-//                            public void onClick(DialogInterface dialog, int id) {
-//                                // User cancelled the dialog
-//                            }
-//                        })
-//                        .setPositiveButton("yes", new DialogInterface.OnClickListener() {
-//                            public void onClick(DialogInterface dialog, int id) {
-//                                delete(pesan);
-//                            }
-//                        });
-//
-//                // Create the AlertDialog object and return it
-//                builder.create().show();
-////                fab.show();
-//
-//            }
-//        });
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage("Are you sure to delete?")
+                        .setNegativeButton("no", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                // User cancelled the dialog
+                            }
+                        })
+                        .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                delete(pesan);
+                            }
+                        });
+
+                // Create the AlertDialog object and return it
+                builder.create().show();
+//                fab.show();
+
+            }
+        });
 
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,7 +139,7 @@ public class UpdateFragment extends Fragment {
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
-                Toast.makeText(getActivity().getApplicationContext(), "User updated", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity().getApplicationContext(), "Pesan updated", Toast.LENGTH_SHORT).show();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.hide(UpdateFragment.this).commit();
             }
@@ -162,7 +164,7 @@ public class UpdateFragment extends Fragment {
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
-                Toast.makeText(getActivity().getApplicationContext(), "Employee deleted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity().getApplicationContext(), "Pesanan deleted", Toast.LENGTH_SHORT).show();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.hide(UpdateFragment.this).commit();
             }
