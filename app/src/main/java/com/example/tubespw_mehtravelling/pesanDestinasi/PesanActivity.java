@@ -1,5 +1,4 @@
 package com.example.tubespw_mehtravelling.pesanDestinasi;
-
 import static java.nio.file.Files.delete;
 
 import android.app.AlertDialog;
@@ -32,32 +31,17 @@ public class PesanActivity extends AppCompatActivity{
     private SwipeRefreshLayout refreshLayout;
     private List<Pesan> pesanList;
     private PesanAdapter adapter;
-//    private ImageButton btnEdit;
+    private Button btnBackRiwayat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.riwayat_pemesanan);
-
+        btnBackRiwayat = findViewById(R.id.btnBackRiwayat);
         refreshLayout = findViewById(R.id.swipe_refresh);
         recyclerView = findViewById(R.id.user_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
-//        btnEdit=findViewById(R.id.btnEdit);
-
-//        btnEdit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                AppCompatActivity activity = (AppCompatActivity) view.getContext();
-//                UpdateFragment mAddFragment = new UpdateFragment();
-//                activity.getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(R.id.ParentAdapter, mAddFragment)
-//                        .addToBackStack(null)
-//                        .commit();
-//            }
-//        });
-
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -67,6 +51,14 @@ public class PesanActivity extends AppCompatActivity{
         });
 
         getPesans();
+
+        btnBackRiwayat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent movePage = new Intent(PesanActivity.this, MainActivity.class);
+                startActivity(movePage);
+            }
+        });
 
 
     }

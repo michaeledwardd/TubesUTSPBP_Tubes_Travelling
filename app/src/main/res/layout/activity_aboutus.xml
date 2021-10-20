@@ -166,12 +166,12 @@
                 </GridLayout>
             </ScrollView>
             <TextView
-                android:layout_marginTop="30dp"
-                android:layout_width="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Desciption"
                 android:textStyle="bold"
-                android:layout_marginLeft="150dp"
+                android:textAlignment="center"
                 android:textSize="25dp"/>
             <TextView
                 android:layout_marginTop="0dp"
@@ -183,12 +183,12 @@
                 android:textColor="@color/black"
                 android:textSize="19dp"/>
             <TextView
-                android:layout_marginTop="15dp"
-                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Develop by"
                 android:textStyle="bold"
-                android:layout_marginLeft="150dp"
+                android:textAlignment="center"
                 android:textSize="25dp"/>
             <TextView
                 android:layout_marginTop="0dp"
@@ -217,6 +217,15 @@
                 android:textStyle="italic"
                 android:textColor="@color/black"
                 android:textSize="19dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnKembali"
+                android:text="BACK"
+                android:backgroundTint="#F10707"
+                android:layout_marginLeft="24dp"/>
+
+
 
 
 
