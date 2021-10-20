@@ -20,65 +20,62 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginStart="5dp">
+                android:layout_marginStart="150dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
-                        android:layout_width="100dp"
                         android:id="@+id/tvNamaDestinasi"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Nama Destinasi"
                         android:textSize="14dp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
-                        android:layout_width="100dp"
+                        android:id="@+id/tvTanggalPemesanan"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Tanggal Pemesanan"
                         android:textSize="14dp"
-                        android:textStyle="bold"
-                        android:id="@+id/tvTanggalPemesanan"/>
+                        android:textStyle="bold" />
 
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
-                        android:layout_width="100dp"
+                        android:id="@+id/tvLamaPesan"
+                        android:layout_width="129dp"
                         android:layout_height="wrap_content"
                         android:text="Lama Pemesanan"
                         android:textSize="14dp"
-                        android:textStyle="bold"
-                        android:id="@+id/tvLamaPesan"/>
+                        android:textStyle="bold" />
 
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
-                        android:layout_width="100dp"
                         android:id="@+id/tvTipe"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Tipe Pemesanan"
                         android:textSize="14dp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                 </LinearLayout>
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="Total Harga"
-                    android:textSize="14dp"
-                    android:textStyle="bold"/>
 
             </LinearLayout>
 
@@ -92,5 +89,11 @@
             </LinearLayout>
 
         </LinearLayout>
-
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:background="#DDD8C8"
+            android:src="@drawable/ic_baseline_add_shopping_cart_24"/>
     </androidx.cardview.widget.CardView>
