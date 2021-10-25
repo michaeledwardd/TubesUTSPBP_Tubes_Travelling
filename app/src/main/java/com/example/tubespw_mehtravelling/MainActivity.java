@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
     UserPreferences userPreferences = null;
-//    Button btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,16 +38,6 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setActivity(this);
 
-//        btnLogout=findViewById(R.id.btnLogout);
-//
-//        btnLogout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                userPreferences.logout();
-//                Toast.makeText(MainActivity.this, "Baiii baiii", Toast.LENGTH_SHORT).show();
-//                checkLogin();
-//            }
-//        });
     }
 
     @Override
