@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TubesPW_MehTravelling">
         <activity
+            android:name=".survey.AddEditActivity"
+            android:exported="true" />
+        <activity
             android:name=".survey.SurveyActivity"
             android:exported="true" />
         <activity
@@ -27,28 +30,28 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.auth.RegisterActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ui.auth.LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".listDestinasi.TampilDataDestinasi"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".pesanDestinasi.ActivityInputPesan"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".pesanDestinasi.PesanActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".LokasiActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".AboutUs"
-            android:exported="true"></activity>
+            android:exported="true" />
 
         <receiver android:name=".PushNotif.NotificationReceiver" />
     </application>

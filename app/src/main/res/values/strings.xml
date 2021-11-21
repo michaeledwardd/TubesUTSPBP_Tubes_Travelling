@@ -23,5 +23,12 @@
     <string name="menu_map_style_outdoors">Outdoors</string>
     <string name="menu_map_style_satellite">Satellite</string>
     <string name="menu_map_style_satellite_streets">Satellite streets</string>
+    <string name="tambah_survey">Tambah Survey</string>
+    <string name="nama_destinasi_edit">Nama Destinasi</string>
+    <string name="alasan">Alasan</string>
+    <string name="penilaian">Penilaian</string>
+    <string name="batal">Batal</string>
+    <string name="simpan">Simpan</string>
+    <string name="edit_survey">Edit Survey</string>
 
 </resources>
