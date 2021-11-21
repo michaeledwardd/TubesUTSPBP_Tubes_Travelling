@@ -21,6 +21,7 @@ import com.example.tubespw_mehtravelling.listDestinasi.TampilDataDestinasi;
 import com.example.tubespw_mehtravelling.pesanDestinasi.ActivityInputPesan;
 import com.example.tubespw_mehtravelling.pesanDestinasi.PesanActivity;
 import com.example.tubespw_mehtravelling.pesanDestinasi.PesanFragment;
+import com.example.tubespw_mehtravelling.survey.SurveyActivity;
 import com.example.tubespw_mehtravelling.ui.auth.LoginActivity;
 import com.example.tubespw_mehtravelling.ui.auth.RegisterActivity;
 
@@ -99,6 +100,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent mainActivity = new Intent(MainActivity.this, LokasiActivity.class);
+            startActivity(mainActivity);
+        }
+    };
+    public View.OnClickListener btnSurvey= new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent mainActivity = new Intent(MainActivity.this, SurveyActivity.class);
             startActivity(mainActivity);
         }
     };
