@@ -42,7 +42,7 @@ public class SurveyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_survey);
 
         surveyService = ApiSurvey.getSurvey().create(SurveyInterface.class);
         layoutLoading = findViewById(R.id.layout_loading);

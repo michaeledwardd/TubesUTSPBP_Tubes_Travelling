@@ -17,6 +17,8 @@ import androidx.databinding.DataBindingUtil;
 
 import com.example.tubespw_mehtravelling.Preferences.UserPreferences;
 import com.example.tubespw_mehtravelling.databinding.ActivityMainBinding;
+import com.example.tubespw_mehtravelling.hardware.QRScannerActivity;
+import com.example.tubespw_mehtravelling.hardware.QRScannerMain;
 import com.example.tubespw_mehtravelling.listDestinasi.TampilDataDestinasi;
 import com.example.tubespw_mehtravelling.pesanDestinasi.ActivityInputPesan;
 import com.example.tubespw_mehtravelling.pesanDestinasi.PesanActivity;
@@ -52,7 +54,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.menu_exit) {
+        if(item.getItemId() == R.id.menu_scanner){
+            Intent mainActivity = new Intent(MainActivity.this, QRScannerMain.class);
+            startActivity(mainActivity);
+            setTitle("QR Scanner");
+        }
+        else if (item.getItemId() == R.id.menu_exit) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Are you sure want to exit?")
                     .setPositiveButton("YES", new DialogInterface.OnClickListener() {

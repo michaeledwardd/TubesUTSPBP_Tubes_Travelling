@@ -29,6 +29,12 @@ import retrofit2.Response;
 
 public class AddEditActivity extends AppCompatActivity {
 
+    private static final String[] DESTINASI_LIST = new String[]{"Malioboro", "kraton solo", "kuta", "monas",
+            "raja ampat", "labuan bajo"};
+
+    private static final String[] PENILAIAN_LIST = new String[]{"1",
+            "2", "3", "4", "5", "6"};
+
     private SurveyInterface surveyService;
     private EditText etName, etNpm;
     private AutoCompleteTextView edFakultas, edProdi;
@@ -45,6 +51,14 @@ public class AddEditActivity extends AppCompatActivity {
         edFakultas = findViewById(R.id.et_fakultas);
         edProdi = findViewById(R.id.ed_prodi);
         layoutLoading = findViewById(R.id.layout_loading);
+
+        ArrayAdapter<String> adapterFakultas =
+                new ArrayAdapter<>(this, R.layout.item_list, DESTINASI_LIST);
+        edFakultas.setAdapter(adapterFakultas);
+        ArrayAdapter<String> adapterProdi =
+                new ArrayAdapter<>(this, R.layout.item_list, PENILAIAN_LIST);
+        edProdi.setAdapter(adapterProdi);
+
 
         Button btnCancel = findViewById(R.id.btn_cancel);
 
@@ -118,7 +132,7 @@ public class AddEditActivity extends AppCompatActivity {
         Survey survey = new Survey(
                 etName.getText().toString(),
                 etNpm.getText().toString(),
-                edFakultas.getText().toString(),
+                Integer.parseInt(edFakultas.getText().toString()) ,
                 edProdi.getText().toString());
         Call<SurveyResponse> call = surveyService.createSurvey(survey);
         call.enqueue(new Callback<SurveyResponse>() {
@@ -161,7 +175,7 @@ public class AddEditActivity extends AppCompatActivity {
         Survey survey = new Survey(
                 etName.getText().toString(),
                 etNpm.getText().toString(),
-                edFakultas.getText().toString(),
+                Integer.parseInt(edFakultas.getText().toString()) ,
                 edProdi.getText().toString());
         Call<SurveyResponse> call = surveyService.updateSurvey(id, survey);
         call.enqueue(new Callback<SurveyResponse>() {

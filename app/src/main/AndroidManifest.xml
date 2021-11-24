@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="false"
@@ -51,6 +52,9 @@
             android:exported="true" />
         <activity
             android:name=".AboutUs"
+            android:exported="true" />
+        <activity
+            android:name=".hardware.QRScannerMain"
             android:exported="true" />
 
         <receiver android:name=".PushNotif.NotificationReceiver" />

@@ -37,21 +37,27 @@
         <entry key="..\:/Kuliah/SEMESTER 5/Coolyeah-5/1. PBP/TUBES/UAS2/app/src/main/res/layout/layout_loading.xml" value="0.1796875" />
         <entry key="..\:/Kuliah/SEMESTER 5/Coolyeah-5/1. PBP/TUBES/UAS2/app/src/main/res/menu/home_menu.xml" value="0.3333333333333333" />
         <entry key="..\:/Kuliah/SEMESTER 5/Coolyeah-5/1. PBP/TUBES/UAS2/app/src/main/res/menu/menu_map_style.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/layout/activity_pesan.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/layout/activity_qrscanner.xml" value="0.1" />
+        <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/layout/activity_qrscanner_main.xml" value="0.1" />
         <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/layout/activity_recycler_view_adapter.xml" value="0.11041666666666666" />
         <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/layout/activity_registrasi.xml" value="0.22" />
         <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/layout/activity_splashscreen.xml" value="0.1" />
+        <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/layout/activity_survey.xml" value="0.1" />
         <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/layout/activity_tampil_list_destinasi.xml" value="0.22" />
         <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/layout/fragment_update.xml" value="0.10666666666666667" />
         <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/layout/fragment_update2.xml" value="0.1640625" />
+        <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/layout/item_list.xml" value="0.1328125" />
         <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/layout/item_pesan.xml" value="0.1" />
         <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/layout/riwayat_pemesanan.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/asus/Downloads/SEMESTER 5/Pemrograman Berbasis Platfrom/ProjectPBP_Tubes_Travelling/app/src/main/res/menu/home_menu.xml" value="0.159375" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
