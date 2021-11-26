@@ -145,8 +145,8 @@ public class SurveyAdapter extends RecyclerView.Adapter<SurveyAdapter.ViewHolder
         public ViewHolder(@NonNull View itemView)
         {
             super(itemView);
-            tvNpm = itemView.findViewById(R.id.tv_npm);
-            tvNama = itemView.findViewById(R.id.tv_title);
+            tvNpm = itemView.findViewById(R.id.tv_namadestinasi);
+            tvNama = itemView.findViewById(R.id.tv_alasan);
             tvInfo = itemView.findViewById(R.id.tv_info);
             btnDelete = itemView.findViewById(R.id.btn_delete);
             cvMahasiswa = itemView.findViewById(R.id.cv_mahasiswa);

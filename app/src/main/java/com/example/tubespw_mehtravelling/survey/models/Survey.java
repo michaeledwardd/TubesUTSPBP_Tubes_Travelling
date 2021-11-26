@@ -4,14 +4,14 @@ public class Survey {
     private Long id;
     private String namaPengguna;
     private String namaDestinasi;
-    private int penilaian;
+    private String penilaian;
     private String alasan;
 
-    public Survey(String namaPengguna, String namaDestinasi, int penilaian, String alasan) {
-        this.namaPengguna = namaPengguna;
+    public Survey(String namaDestinasi, String namaPengguna, String alasan, String penilaian) {
         this.namaDestinasi = namaDestinasi;
-        this.penilaian = penilaian;
+        this.namaPengguna = namaPengguna;
         this.alasan = alasan;
+        this.penilaian = penilaian;
     }
 
     public Long getId() {
@@ -38,11 +38,11 @@ public class Survey {
         this.namaDestinasi = namaDestinasi;
     }
 
-    public int getPenilaian() {
+    public String getPenilaian() {
         return penilaian;
     }
 
-    public void setPenilaian(int penilaian) {
+    public void setPenilaian(String penilaian) {
         this.penilaian = penilaian;
     }
 

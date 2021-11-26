@@ -46,8 +46,8 @@ public class SurveyActivity extends AppCompatActivity {
 
         surveyService = ApiSurvey.getSurvey().create(SurveyInterface.class);
         layoutLoading = findViewById(R.id.layout_loading);
-        srMahasiswa = findViewById(R.id.sr_mahasiswa);
-        svMahasiswa = findViewById(R.id.sv_mahasiswa);
+        srMahasiswa = findViewById(R.id.sr_survey);
+        svMahasiswa = findViewById(R.id.sv_survey);
         srMahasiswa.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -74,7 +74,7 @@ public class SurveyActivity extends AppCompatActivity {
                 startActivityForResult(i, LAUNCH_ADD_ACTIVITY);
             }
         });
-        RecyclerView rvMahasiswa = findViewById(R.id.rv_mahasiswa);
+        RecyclerView rvMahasiswa = findViewById(R.id.rv_survey);
         adapter = new SurveyAdapter(new ArrayList<>(), this);
         rvMahasiswa.setLayoutManager(new LinearLayoutManager(SurveyActivity.this,
                 LinearLayoutManager.VERTICAL, false));

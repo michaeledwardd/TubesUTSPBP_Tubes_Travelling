@@ -1,5 +1,6 @@
 package com.example.tubespw_mehtravelling.survey.models;
 
+
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -25,4 +26,5 @@ public class SurveyResponse {
     public void setSurveyList(List<Survey> surveyList) {
         this.surveyList = surveyList;
     }
+
 }

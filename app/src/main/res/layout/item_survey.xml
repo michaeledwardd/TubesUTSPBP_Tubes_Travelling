@@ -25,13 +25,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_npm"
+                android:id="@+id/tv_namadestinasi"
                 style="@style/TextAppearance.AppCompat.Body2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="NamaDestinasi" />
             <TextView
-                android:id="@+id/tv_title"
+                android:id="@+id/tv_alasan"
                 style="@style/TextAppearance.AppCompat.SearchResult.Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

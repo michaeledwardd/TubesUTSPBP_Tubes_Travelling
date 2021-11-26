@@ -10,7 +10,7 @@
     tools:context=".survey.SurveyActivity">
 
     <SearchView
-        android:id="@+id/sv_mahasiswa"
+        android:id="@+id/sv_survey"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -21,16 +21,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/sr_mahasiswa"
+        android:id="@+id/sr_survey"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sv_mahasiswa">
+        app:layout_constraintTop_toBottomOf="@+id/sv_survey">
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_mahasiswa"
+            android:id="@+id/rv_survey"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"

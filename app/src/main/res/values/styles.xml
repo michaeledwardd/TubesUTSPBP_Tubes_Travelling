@@ -1,7 +1,36 @@
 <resources>
-
-    <style name="Widget.Theme.TubesPW_MehTravelling.MyView" parent="">
-        <item name="android:background">@color/gray_400</item>
-        <item name="exampleColor">@color/light_blue_400</item>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowTranslucentNavigation">false</item>
     </style>
+
+    <style name="AppTheme_red" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/red_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/red_colorPrimaryDark</item>
+        <item name="colorAccent">@color/red_colorAccent</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style>
+
+    <style name="AppTheme_blue" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/blue_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/blue_colorPrimaryDark</item>
+        <item name="colorAccent">@color/blue_colorAccent</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style>
+
+    <style name="MainToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:fontFamily">@font/raleway_bold</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+    <style name="OtherToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:fontFamily">@font/raleway_light</item>
+    </style>
+
 </resources>

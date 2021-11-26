@@ -17,23 +17,24 @@
         android:text="@string/tambah_survey"
         app:layout_constraintTop_toTopOf="parent" />
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layout_nama"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:id="@+id/layout_namadestinasi"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/nama_destinasi_edit"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:hint="Nama Destinasi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title">
-        <AutoCompleteTextView
-            android:id="@+id/ed_nama"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_namadestinasi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textCapWords" />
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layout_npm"
+        android:id="@+id/layout_namapengguna"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,15 +43,15 @@
         android:hint="Nama Pengguna"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_nama">
+        app:layout_constraintTop_toBottomOf="@+id/layout_namadestinasi">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_npm"
+            android:id="@+id/et_namapengguna"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layout_prodi"
+        android:id="@+id/layout_alasan"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,16 +60,15 @@
         android:hint="@string/alasan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_npm">
+        app:layout_constraintTop_toBottomOf="@+id/layout_namapengguna">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_fakultas"
+            android:id="@+id/et_alasan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layout_description"
 
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
@@ -78,12 +78,13 @@
         android:hint="@string/penilaian"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_prodi">
+        app:layout_constraintTop_toBottomOf="@+id/layout_alasan">
         <AutoCompleteTextView
-            android:id="@+id/ed_prodi"
+            android:id="@+id/ed_penilaian"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="none" />
+            android:inputType="none"
+             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

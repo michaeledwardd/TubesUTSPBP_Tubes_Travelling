@@ -60,7 +60,10 @@ dependencies {
     //two way data binding
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'com.google.code.gson:gson:2.8.7'
 
+    //profile
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     //noinspection GradleCompatible
     implementation 'com.android.support:recyclerview-v7:28.0.0' //recycleview
@@ -87,4 +90,8 @@ dependencies {
 
     //QR Scanner
     implementation 'com.budiyev.android:code-scanner:2.1.0'
+
+    implementation 'com.google.android.material:material:1.0.0'
+
+
 }
