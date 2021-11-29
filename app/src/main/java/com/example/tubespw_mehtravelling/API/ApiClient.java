@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
-    public static final String BASE_URL ="http://127.0.0.1:8000/api/";
+    public static final String BASE_URL ="https://www.mehtravellingtubes.xyz/public/api/";
     public static Retrofit retrofit = null;
 
     public static Retrofit getClient(){

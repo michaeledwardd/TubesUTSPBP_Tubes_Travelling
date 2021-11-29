@@ -14,7 +14,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp">
+        android:layout_marginTop="270dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -59,15 +59,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="50dp">
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_clearfield"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#BC1212"
                     android:layout_marginTop="10dp"
+                    android:backgroundTint="#BC1212"
                     android:fontFamily="@font/raleway_medium"
                     android:text="Clear Field"
                     android:textSize="16sp" />
@@ -76,13 +76,14 @@
                     android:id="@+id/btn_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
                     android:backgroundTint="#1238BC"
                     android:fontFamily="@font/raleway_medium"
                     android:text="Login"
                     android:textSize="16sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -101,9 +102,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textColor="#6B1283"
                     android:text="Register"
-                     />
+                    android:textColor="#6B1283" />
             </LinearLayout>
 
         </LinearLayout>
