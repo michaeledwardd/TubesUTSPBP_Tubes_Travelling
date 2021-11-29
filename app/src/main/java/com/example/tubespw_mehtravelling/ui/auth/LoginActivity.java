@@ -148,26 +148,26 @@ public class LoginActivity extends AppCompatActivity {
                         editor.apply();
                         System.out.println("Test setelah editor apply");
 
-//                        if (user.getEmail().equalsIgnoreCase("admin@admin.com")) {
-//                            System.out.println("admin areaaa");
+                        if (user.getEmail().equalsIgnoreCase("admin@admin.com")) {
+                            System.out.println("admin areaaa");
 //                            Intent i = new Intent(LoginActivity.this, AdminActivity.class);
 //                            startActivity(i);
-//                        } else {
-//                            System.out.println("non admin areaaa");
-//                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
-//                            System.out.println("non admin area setelah put extra");
-//                            i.putExtra("id",user.getId());
-//                            i.putExtra("name",user.getName());
-//                            i.putExtra("email",user.getEmail());
-//                            i.putExtra("country",user.getCountry());
-//                            i.putExtra("phone",user.getPhone());
-//                            i.putExtra("city",user.getCity());
-//                            i.putExtra("image",user.getPhoto());
-//                            startActivity(i);
-//                            System.out.println("non admin area setelah start activity");
-//                            finish();
-//                            System.out.println("non admin area setelah finish");
-//                        }
+                        } else {
+                            System.out.println("non admin areaaa");
+                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                            System.out.println("non admin area setelah put extra");
+                            i.putExtra("id",user.getId());
+                            i.putExtra("name",user.getName());
+                            i.putExtra("email",user.getEmail());
+                            i.putExtra("country",user.getCountry());
+                            i.putExtra("phone",user.getPhone());
+                            i.putExtra("city",user.getCity());
+                            i.putExtra("image",user.getPhoto());
+                            startActivity(i);
+                            System.out.println("non admin area setelah start activity");
+                            finish();
+                            System.out.println("non admin area setelah finish");
+                        }
                     } else { //If response's code is 4xx (error)
                         try {
                             JSONObject error = new JSONObject(response.errorBody().string());

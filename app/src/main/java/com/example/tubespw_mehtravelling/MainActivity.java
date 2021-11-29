@@ -1,20 +1,29 @@
 package com.example.tubespw_mehtravelling;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
 
+import com.example.tubespw_mehtravelling.API.ApiClient;
+import com.example.tubespw_mehtravelling.API.ApiInterface;
+import com.example.tubespw_mehtravelling.API.User.UserResponse;
 import com.example.tubespw_mehtravelling.Preferences.UserPreferences;
 import com.example.tubespw_mehtravelling.databinding.ActivityMainBinding;
 import com.example.tubespw_mehtravelling.hardware.QRScannerActivity;
@@ -23,15 +32,29 @@ import com.example.tubespw_mehtravelling.listDestinasi.TampilDataDestinasi;
 import com.example.tubespw_mehtravelling.pesanDestinasi.ActivityInputPesan;
 import com.example.tubespw_mehtravelling.pesanDestinasi.PesanActivity;
 import com.example.tubespw_mehtravelling.pesanDestinasi.PesanFragment;
+import com.example.tubespw_mehtravelling.profile.ProfileFragment;
 import com.example.tubespw_mehtravelling.survey.SurveyActivity;
 import com.example.tubespw_mehtravelling.ui.auth.LoginActivity;
 import com.example.tubespw_mehtravelling.ui.auth.RegisterActivity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+    SharedPreferences app_preferences, shared;
     UserPreferences userPreferences = null;
+    private ProgressDialog progressDialog;
+    String token;
+    int idUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setActivity(this);
+        shared = getSharedPreferences("getId", Context.MODE_PRIVATE);
+        idUser = shared.getInt("idUser", -1);
+        token = shared.getString("token", null);
 
     }
 
@@ -59,20 +85,45 @@ public class MainActivity extends AppCompatActivity {
             startActivity(mainActivity);
             setTitle("QR Scanner");
         }
-        else if (item.getItemId() == R.id.menu_exit) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Are you sure want to exit?")
-                    .setPositiveButton("YES", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            //  Keluar dari aplikasi
-                           finishAndRemoveTask();
-                        }
-                    })
-                    .show();
+        else if(item.getItemId() == R.id.menu_profile){
+            changeFragment(new ProfileFragment());
+            setTitle("Profile");
+        }
+        else if(item.getItemId()==R.id.menu_logout) {
+            logout();
         }
         return super.onOptionsItemSelected(item);
     }
+//    final ImageButton dropdownMenu = findViewById(R.id.btn_dropdown);
+//            dropdownMenu.setOnClickListener(new View.OnClickListener() {
+//        @Override
+//        public void onClick(View view) {
+//            PopupMenu popup = new PopupMenu(MainActivity.this, dropdownMenu);
+//            popup.getMenuInflater()
+//                    .inflate(R.menu.menu_dropdown, popup.getMenu());
+//
+//            popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+//                public boolean onMenuItemClick(MenuItem item) {
+//                    Intent intent;
+//                    if(item.getItemId()==R.id.menu_profile){
+////                                intent = new Intent(getApplicationContext(), LocationActivity.class);
+////                                startActivity(intent);
+//                    }else if (item.getItemId()==R.id.setting_theme){
+//                        intent = new Intent(getApplicationContext(), ThemeActivity.class);
+//                        startActivity(intent);
+//                    }else if (item.getItemId()==R.id.qrscanner){
+//                        Intent mainActivity = new Intent(MainActivity.this, QRScannerMain.class);
+//                        startActivity(mainActivity);
+//                    } else if(item.getItemId()==R.id.menu_logout) {
+//                        logout();
+//                    }
+//                    return true;
+//                }
+//            });
+//
+//            popup.show();
+//        }
+//    };
 
     public View.OnClickListener btnListDestinasi= new View.OnClickListener() {
         @Override
@@ -140,4 +191,56 @@ public class MainActivity extends AppCompatActivity {
 //            Toast.makeText(MainActivity.this, "Welcome back !", Toast.LENGTH_SHORT).show();
 //        }
 //    }
+public void logout() {
+    progressDialog = new ProgressDialog(this);
+    progressDialog.setMessage("Logging Out....");
+    progressDialog.setProgressStyle(android.app.ProgressDialog.STYLE_SPINNER);
+    progressDialog.show();
+
+    ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+    Call<UserResponse> logout = apiService.logout("Bearer " + token);
+
+    logout.enqueue(new Callback<UserResponse>() {
+        @Override
+        public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+            //If response's code is 200
+            if (response.isSuccessful()) {
+                //Edit sharedpreferences
+                SharedPreferences.Editor editor = shared.edit();
+                editor.putInt("idUser", -1);
+                editor.putString("token", null);
+                editor.apply();
+                Toast.makeText(MainActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
+
+                Intent moveToLogin = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(moveToLogin);
+                finish();
+            } else {  //If response's code is 4xx (error)
+                try {
+                    JSONObject error = new JSONObject(response.errorBody().string());
+                    Toast.makeText(MainActivity.this, error.optString("message"), Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                progressDialog.dismiss();
+            }
+        }
+
+        @Override
+        public void onFailure(Call<UserResponse> call, Throwable t) {
+            Toast.makeText(MainActivity.this, "Logout Failed", Toast.LENGTH_SHORT).show();
+            progressDialog.dismiss();
+        }
+    });
+}
+    //  Method untuk mengubah fragment
+    public void changeFragment(Fragment fragment){
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.layout_fragment,fragment)
+                .commit();
+    }
 }

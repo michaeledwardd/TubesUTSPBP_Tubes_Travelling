@@ -273,7 +273,7 @@
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="CERITAKAN PENGALAMANMU"
+                                android:text="SURVEY DESTINASI"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
                                 android:textStyle="bold" />
