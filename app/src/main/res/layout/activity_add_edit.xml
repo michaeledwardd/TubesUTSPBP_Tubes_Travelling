@@ -70,7 +70,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layout_penilaian"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
@@ -79,11 +79,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout_alasan">
-        <AutoCompleteTextView
-            android:id="@+id/ed_penilaian"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_penilaian"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="none" />
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

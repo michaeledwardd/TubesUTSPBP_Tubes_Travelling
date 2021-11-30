@@ -33,12 +33,12 @@ public class AddEditActivity extends AppCompatActivity {
 //    private static final String[] DESTINASI_LIST = new String[]{"Malioboro", "kraton solo", "kuta", "monas",
 //            "raja ampat", "labuan bajo"};
 
-    private static final String[] PENILAIAN_LIST = new String[]{"1",
-            "2", "3", "4", "5", "6"};
+//    private static final String[] PENILAIAN_LIST = new String[]{"1",
+//            "2", "3", "4", "5", "6"};
 
     private SurveyInterface surveyService;
-    private AutoCompleteTextView ednamadestinasi, edpenilaian ;
-    private EditText etnamadestinasi, etnamapengguna, etalasan;
+//    private AutoCompleteTextView ednamadestinasi, edpenilaian ;
+    private EditText etnamadestinasi, etpenilaian, etnamapengguna, etalasan;
     private LinearLayout layoutLoading;
 
     @Override
@@ -50,16 +50,16 @@ public class AddEditActivity extends AppCompatActivity {
         etnamadestinasi = findViewById(R.id.et_namadestinasi);
 //        etdestinasi = findViewById(R.id.etdestinasi);
         etnamapengguna = findViewById(R.id.et_namapengguna);
-        edpenilaian = findViewById(R.id.ed_penilaian);
+        etpenilaian = findViewById(R.id.et_penilaian);
         etalasan = findViewById(R.id.et_alasan);
         layoutLoading = findViewById(R.id.layout_loading);
 
 //        ArrayAdapter<String> adapterNamaDestinasi =
 //                new ArrayAdapter<>(this, R.layout.item_list, DESTINASI_LIST);
 //        ednamadestinasi.setAdapter(adapterNamaDestinasi);
-        ArrayAdapter<String> adapterPenilaian =
-                new ArrayAdapter<>(this, R.layout.item_list, PENILAIAN_LIST);
-        edpenilaian.setAdapter(adapterPenilaian);
+//        ArrayAdapter<String> adapterPenilaian =
+//                new ArrayAdapter<>(this, R.layout.item_list, PENILAIAN_LIST);
+//        edpenilaian.setAdapter(adapterPenilaian);
 
 
         Button btnCancel = findViewById(R.id.btn_cancel);
@@ -114,7 +114,7 @@ public class AddEditActivity extends AppCompatActivity {
                     etnamadestinasi.setText(survey.getNamaDestinasi());
                     etnamapengguna.setText(survey.getNamaPengguna());
                     etalasan.setText(survey.getAlasan());
-                    edpenilaian.setText(survey.getPenilaian());
+                    etpenilaian.setText(survey.getPenilaian());
 
                 } else {
                     try {
@@ -144,7 +144,7 @@ public class AddEditActivity extends AppCompatActivity {
                 etnamadestinasi.getText().toString(),
                 etnamapengguna.getText().toString(),
                 etalasan.getText().toString(),
-                edpenilaian.getText().toString());
+                etpenilaian.getText().toString());
         Call<SurveyResponse> call = surveyService.createSurvey(survey);
         call.enqueue(new Callback<SurveyResponse>() {
             @Override
@@ -184,7 +184,7 @@ public class AddEditActivity extends AppCompatActivity {
                 etnamadestinasi.getText().toString(),
                 etnamapengguna.getText().toString(),
                 etalasan.getText().toString(),
-                edpenilaian.getText().toString());
+                etpenilaian.getText().toString());
         Call<SurveyResponse> call = surveyService.updateSurvey(id, survey);
         call.enqueue(new Callback<SurveyResponse>() {
             @Override

@@ -36,7 +36,7 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
     MaterialTextView clickHere;
-    MaterialButton login;
+    MaterialButton login, btn_clearfield;
     TextInputLayout emailLayout, passLayout;
     TextInputEditText email, pass;
     List<User> userList;
@@ -85,6 +85,7 @@ public class LoginActivity extends AppCompatActivity {
         login = findViewById(R.id.btn_login);
         email = findViewById(R.id.ti_login_email);
         pass = findViewById(R.id.ti_login_pass);
+        btn_clearfield = findViewById(R.id.btn_clearfield);
 
         emailLayout = findViewById(R.id.til_login_email);
         passLayout = findViewById(R.id.til_login_pass);
@@ -98,6 +99,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        btn_clearfield.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                email.setText("");
+                pass.setText("");
+            }
+        });
         //Button Login clicked
         login.setOnClickListener(new View.OnClickListener() {
             @Override

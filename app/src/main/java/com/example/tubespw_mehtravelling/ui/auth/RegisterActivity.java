@@ -90,7 +90,6 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrasi);
 
-        //ID
         profilePict = findViewById(R.id.profile_image_signUp);
         email = findViewById(R.id.ti_signUp_email);
         name = findViewById(R.id.ti_signUp_name);
@@ -101,7 +100,6 @@ public class RegisterActivity extends AppCompatActivity {
         signUpBtn = findViewById(R.id.btn_signUp_submit);
         cancelBtn = findViewById(R.id.btn_signUp_cancel);
 
-
         emailLayout = findViewById(R.id.til_signUp_email);
         nameLayout = findViewById(R.id.til_signUp_name);
         passLayout = findViewById(R.id.til_signUp_pass);
@@ -109,11 +107,11 @@ public class RegisterActivity extends AppCompatActivity {
         cityLayout = findViewById(R.id.til_signUp_city);
         countryLayout = findViewById(R.id.til_signUp_country);
 
-
         //Button Pressed
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(RegisterActivity.this, "Resgister Berhasil", Toast.LENGTH_SHORT).show();
                 addUser();
             }
         });
@@ -167,10 +165,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 2 && resultCode == RESULT_OK) {
-            System.out.println("masukkkkk");
-//            Glide.with(this)
-//                    .load(imgUri)
-//                    .into(profilePict);
+            System.out.println("masuk");
             Bundle extras = data.getExtras();
             bitmap = (Bitmap) extras.get("data");
             System.out.println("bitmap " + bitmap);
@@ -178,8 +173,6 @@ public class RegisterActivity extends AppCompatActivity {
             Glide.with(this)
                     .load(bitmap)
                     .into(profilePict);
-
-//            profilePict.setImageBitmap(bitmap);
             bitmap = getResizedBitmap(bitmap, 512);
             stringImage = getBase64String(bitmap);
         }
@@ -208,23 +201,11 @@ public class RegisterActivity extends AppCompatActivity {
         return base64String;
     }
 
-    //Camera
     public void capturePhoto() {
-//        ContentValues values = new ContentValues();
-//        values.put(MediaStore.Images.Media.TITLE, "New Picture");
-//        values.put(MediaStore.Images.Media.DESCRIPTION, "From the Camera");
-//        imgUri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
-////         Create the camera_intent ACTION_IMAGE_CAPTURE. it will open the camera for capture the image
-//        Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//        camera_intent.putExtra(MediaStore.EXTRA_OUTPUT, imgUri);
-//        // Start the activity with camera_intent, and request pic id
-//        startActivityForResult(camera_intent, REQUEST_IMAGE_CAPTURE);
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent,2);
     }
 
-
-    //Checking email validity
     public static boolean isEmailValid(String email) {
         boolean isValid = false;
 
@@ -239,7 +220,6 @@ public class RegisterActivity extends AppCompatActivity {
         return isValid;
     }
 
-    //Database add user
     private void addUser() {
         final String emailSign = email.getText().toString();
         final String nameSign = name.getText().toString();
@@ -248,7 +228,6 @@ public class RegisterActivity extends AppCompatActivity {
         final String citySign = city.getText().toString();
         final String countrySign = country.getText().toString();
 
-        //Input Sign Up Exception
         if (stringImage.equals("")) {
             Toast.makeText(this, "Upload your image", Toast.LENGTH_SHORT).show();
         }
@@ -277,19 +256,20 @@ public class RegisterActivity extends AppCompatActivity {
             progressDialog.setMessage("Processing....");
             progressDialog.setProgressStyle(android.app.ProgressDialog.STYLE_SPINNER);
             progressDialog.show();
-
+            Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
             ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-            Call<UserResponse> add = apiService.register(nameSign, emailSign, passSign, phoneSign, citySign, countrySign, stringImage);
+            Call<UserResponse> add = apiService.register(nameSign, emailSign, passSign, phoneSign, citySign, countrySign, "asdasd");
 //            Call<UserResponse> add = apiService.register(nameSign, emailSign, passSign, phoneSign, citySign, countrySign, imgUri.toString());
-            System.out.println("Masuk call response");
+            Log.d("asdasd","Masuk ke on response");
 
             add.enqueue(new Callback<UserResponse>() {
                 @Override
                 public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                     //If response's code is 200
+                    Log.d("asdasd",response.toString()+"asdasd");
                     if (response.isSuccessful()) {
                         Toast.makeText(RegisterActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        System.out.println("Masuk on response register sukses");
+
                         progressDialog.dismiss();
                         onBackPressed();
                     } else {  //If response's code is 4xx (error)
