@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiSurvey {
-    public static final String BASE_URL = "http://127.0.0.1:8000/api/";
+    public static final String BASE_URL = "https://www.mehtravellingtubes.xyz/public/api/travelling/";
     public static Retrofit retrofit = null;
     public static Retrofit getSurvey()
     {
