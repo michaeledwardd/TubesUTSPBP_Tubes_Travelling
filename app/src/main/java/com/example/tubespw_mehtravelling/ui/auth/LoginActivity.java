@@ -19,6 +19,7 @@ import com.example.tubespw_mehtravelling.Constant;
 import com.example.tubespw_mehtravelling.MainActivity;
 import com.example.tubespw_mehtravelling.Model.User;
 import com.example.tubespw_mehtravelling.R;
+import com.example.tubespw_mehtravelling.survey.AddEditActivity;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -154,6 +155,8 @@ public class LoginActivity extends AppCompatActivity {
                         //save token
                         editor.putString("token", token);
                         editor.apply();
+                        Toast.makeText(LoginActivity.this,
+                                token, Toast.LENGTH_SHORT).show();
                         System.out.println("Test setelah editor apply");
 
                         if (user.getEmail().equalsIgnoreCase("admin@admin.com")) {

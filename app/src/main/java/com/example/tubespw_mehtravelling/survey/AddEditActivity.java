@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -35,7 +36,8 @@ public class AddEditActivity extends AppCompatActivity {
 
 //    private static final String[] PENILAIAN_LIST = new String[]{"1",
 //            "2", "3", "4", "5", "6"};
-
+    String token;
+    SharedPreferences shared;
     private SurveyInterface surveyService;
 //    private AutoCompleteTextView ednamadestinasi, edpenilaian ;
     private EditText etnamadestinasi, etpenilaian, etnamapengguna, etalasan;
@@ -53,6 +55,8 @@ public class AddEditActivity extends AppCompatActivity {
         etpenilaian = findViewById(R.id.et_penilaian);
         etalasan = findViewById(R.id.et_alasan);
         layoutLoading = findViewById(R.id.layout_loading);
+        shared = getSharedPreferences("getId", MODE_PRIVATE);
+        token = shared.getString("token", null);
 
 //        ArrayAdapter<String> adapterNamaDestinasi =
 //                new ArrayAdapter<>(this, R.layout.item_list, DESTINASI_LIST);
@@ -88,7 +92,7 @@ public class AddEditActivity extends AppCompatActivity {
             btnSave.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    createSuvey();
+                    createSurvey();
                 }
             });
         } else {
@@ -104,7 +108,8 @@ public class AddEditActivity extends AppCompatActivity {
     }
     private void getSurveyById(long id) {
         setLoading(true);
-        Call<SurveyResponse> call = surveyService.getSurveyById(id);
+        Call<SurveyResponse> call = surveyService.getSurveyById(id,"Bearer " + token);
+
         call.enqueue(new Callback<SurveyResponse>() {
             @Override
             public void onResponse(Call<SurveyResponse> call,
@@ -133,19 +138,25 @@ public class AddEditActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<SurveyResponse> call, Throwable t) {
                 Toast.makeText(AddEditActivity.this,
-                        "Network error", Toast.LENGTH_SHORT).show();
+                        t.getMessage(), Toast.LENGTH_SHORT).show();
                 setLoading(false);
             }
         });
     }
-    private void createSuvey() {
+    private void createSurvey() {
         setLoading(true);
         Survey survey = new Survey(
                 etnamadestinasi.getText().toString(),
                 etnamapengguna.getText().toString(),
                 etalasan.getText().toString(),
                 etpenilaian.getText().toString());
-        Call<SurveyResponse> call = surveyService.createSurvey(survey);
+        Call<SurveyResponse> call = surveyService.createSurvey(
+                etnamadestinasi.getText().toString(),
+                etnamapengguna.getText().toString(),
+                etalasan.getText().toString(),
+                etpenilaian.getText().toString(),"Bearer " + token);
+        Toast.makeText(AddEditActivity.this,
+                token, Toast.LENGTH_SHORT).show();
         call.enqueue(new Callback<SurveyResponse>() {
             @Override
             public void onResponse(Call<SurveyResponse> call,
@@ -185,7 +196,11 @@ public class AddEditActivity extends AppCompatActivity {
                 etnamapengguna.getText().toString(),
                 etalasan.getText().toString(),
                 etpenilaian.getText().toString());
-        Call<SurveyResponse> call = surveyService.updateSurvey(id, survey);
+        Call<SurveyResponse> call = surveyService.updateSurvey(id,
+                etnamadestinasi.getText().toString(),
+                etnamapengguna.getText().toString(),
+                etalasan.getText().toString(),
+                etpenilaian.getText().toString(),"Bearer " + token);
         call.enqueue(new Callback<SurveyResponse>() {
             @Override
             public void onResponse(Call<SurveyResponse> call,

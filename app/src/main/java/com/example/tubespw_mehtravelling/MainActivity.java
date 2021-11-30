@@ -168,6 +168,13 @@ public class MainActivity extends AppCompatActivity {
             startActivity(mainActivity);
         }
     };
+    public View.OnClickListener btnProfileMenu= new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent mainActivity = new Intent(MainActivity.this, ProfileFragment.class);
+            startActivity(mainActivity);
+        }
+    };
 
 
 
@@ -240,7 +247,7 @@ public void logout() {
     public void changeFragment(Fragment fragment){
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.layout_fragment,fragment)
+                .replace(R.id.profile_menu,fragment)
                 .commit();
     }
 }

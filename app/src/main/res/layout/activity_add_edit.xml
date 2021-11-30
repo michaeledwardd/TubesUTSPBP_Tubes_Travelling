@@ -50,23 +50,6 @@
             android:layout_height="wrap_content"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layout_alasan"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="8dp"
-        android:hint="@string/alasan"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_namapengguna">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_alasan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layout_penilaian"
@@ -78,9 +61,26 @@
         android:hint="@string/penilaian"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_alasan">
+        app:layout_constraintTop_toBottomOf="@+id/layout_namapengguna">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_penilaian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_alasan"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/alasan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_penilaian">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_alasan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text" />

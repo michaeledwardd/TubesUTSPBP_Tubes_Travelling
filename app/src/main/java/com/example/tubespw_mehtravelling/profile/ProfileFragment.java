@@ -64,7 +64,6 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        profileViewModel = ViewModelProviders.of(this).get(com.example.tubespw_mehtravelling.profile.ProfileViewModel.class);
         profileBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile, container, false);
         View root = profileBinding.getRoot();
 

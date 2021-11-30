@@ -8,6 +8,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -38,7 +39,8 @@ public class SurveyActivity extends AppCompatActivity {
     private SurveyInterface surveyService;
     private SearchView svMahasiswa;
     private LinearLayout layoutLoading;
-
+    String token;
+    SharedPreferences shared;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +50,8 @@ public class SurveyActivity extends AppCompatActivity {
         layoutLoading = findViewById(R.id.layout_loading);
         srMahasiswa = findViewById(R.id.sr_survey);
         svMahasiswa = findViewById(R.id.sv_survey);
+        shared = getSharedPreferences("getId", MODE_PRIVATE);
+        token = shared.getString("token", null);
         srMahasiswa.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -92,7 +96,7 @@ public class SurveyActivity extends AppCompatActivity {
     }
 
     private void getAllSurvey() {
-        Call<SurveyResponse> call = surveyService.getAllSurvey();
+        Call<SurveyResponse> call = surveyService.getAllSurvey("Bearer " + token);
         srMahasiswa.setRefreshing(true);
         call.enqueue(new Callback<SurveyResponse>() {
             @Override
@@ -126,7 +130,7 @@ public class SurveyActivity extends AppCompatActivity {
     }
 
     public void deleteSurvey(long id) {
-        Call<SurveyResponse> call = surveyService.deleteSurvey(id);
+        Call<SurveyResponse> call = surveyService.deleteSurvey(id,"Bearer " + token);
         setLoading(true);
         call.enqueue(new Callback<SurveyResponse>() {
             @Override
@@ -153,7 +157,7 @@ public class SurveyActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<SurveyResponse> call, Throwable t) {
-                Toast.makeText(SurveyActivity.this, "Network error",
+                Toast.makeText(SurveyActivity.this, t.getMessage(),
                         Toast.LENGTH_SHORT).show();
                 setLoading(false);
             }

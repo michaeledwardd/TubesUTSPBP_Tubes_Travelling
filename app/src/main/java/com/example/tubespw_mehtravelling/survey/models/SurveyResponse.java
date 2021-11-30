@@ -8,7 +8,7 @@ import java.util.List;
 public class SurveyResponse {
     private String message;
 
-    @SerializedName("survey")
+    @SerializedName("data")
     private List<Survey> surveyList;
 
     public String getMessage() {

@@ -58,7 +58,7 @@ public class SurveyAdapter extends RecyclerView.Adapter<SurveyAdapter.ViewHolder
             {
                 MaterialAlertDialogBuilder materialAlertDialogBuilder = new MaterialAlertDialogBuilder(context);
                 materialAlertDialogBuilder.setTitle("Konfirmasi")
-                        .setMessage("Apakah anda yakin ingin menghapus data mahasiswa ini?")
+                        .setMessage("Apakah anda yakin ingin menghapus data ini?")
                         .setNegativeButton("Batal", null)
                         .setPositiveButton("Hapus", new
                                 DialogInterface.OnClickListener()
