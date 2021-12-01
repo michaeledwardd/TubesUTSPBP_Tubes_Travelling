@@ -155,8 +155,8 @@ public class AddEditActivity extends AppCompatActivity {
                 etnamapengguna.getText().toString(),
                 etalasan.getText().toString(),
                 etpenilaian.getText().toString(),"Bearer " + token);
-        Toast.makeText(AddEditActivity.this,
-                token, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(AddEditActivity.this,
+//                token, Toast.LENGTH_SHORT).show();
         call.enqueue(new Callback<SurveyResponse>() {
             @Override
             public void onResponse(Call<SurveyResponse> call,

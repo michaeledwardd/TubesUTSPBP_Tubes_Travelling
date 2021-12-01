@@ -253,7 +253,7 @@
                         android:clickable="true"
                         android:onClick="@{activity.btnSurvey}"
                         android:foreground="?android:attr/selectableItemBackground"
-                        app:cardBackgroundColor="#D36161"
+                        app:cardBackgroundColor="#FFFF00"
                         app:cardCornerRadius="6dp"
                         app:cardElevation="6dp">
 
@@ -289,7 +289,7 @@
                         android:clickable="true"
                         android:onClick="@{activity.btnProfileMenu}"
                         android:foreground="?android:attr/selectableItemBackground"
-                        app:cardBackgroundColor="#D36161"
+                        app:cardBackgroundColor="#87cefa"
                         app:cardCornerRadius="6dp"
                         app:cardElevation="6dp">
 
@@ -303,7 +303,7 @@
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:background="@drawable/ic_baseline_card_membership_24" />
+                                android:background="@drawable/ic_baseline_person_24" />
 
                             <TextView
                                 android:layout_width="110dp"

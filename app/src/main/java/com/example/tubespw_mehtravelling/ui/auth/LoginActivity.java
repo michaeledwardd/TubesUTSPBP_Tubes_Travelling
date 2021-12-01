@@ -155,8 +155,8 @@ public class LoginActivity extends AppCompatActivity {
                         //save token
                         editor.putString("token", token);
                         editor.apply();
-                        Toast.makeText(LoginActivity.this,
-                                token, Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(LoginActivity.this,
+//                                token, Toast.LENGTH_SHORT).show();
                         System.out.println("Test setelah editor apply");
 
                         if (user.getEmail().equalsIgnoreCase("admin@admin.com")) {
