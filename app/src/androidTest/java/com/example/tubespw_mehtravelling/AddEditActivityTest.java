@@ -46,10 +46,10 @@ public class AddEditActivityTest {
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
-                                5),
+                                7),
                         isDisplayed()));
         Button1.perform(click());
-        onView(isRoot()).perform(waitFor(5000));
+        onView(isRoot()).perform(waitFor(3000));
 
         ViewInteraction textInputEditText = onView(
                 allOf(withId(R.id.et_namadestinasi),
