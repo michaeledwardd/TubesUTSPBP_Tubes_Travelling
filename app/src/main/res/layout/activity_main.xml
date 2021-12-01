@@ -33,8 +33,7 @@
                     android:textSize="25dp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:text="Welcome,
-                    MARSHANDA "/>
+                    android:text="@string/welcome_marshanda"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -89,7 +88,7 @@
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="LIST DESTINASI"
+                                android:text="@string/list_destinasi"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
                                 android:textStyle="bold" />
@@ -125,7 +124,7 @@
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="PESAN"
+                                android:text="@string/pesan"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
                                 android:textStyle="bold" />
@@ -162,7 +161,7 @@
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="RIWAYAT PEMESANAN"
+                                android:text="@string/riwayat_pemesanan"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
                                 android:textStyle="bold" />
@@ -199,7 +198,7 @@
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="ABOUT US"
+                                android:text="@string/about_us"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
                                 android:textStyle="bold" />
@@ -236,7 +235,7 @@
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="LOKASI"
+                                android:text="@string/lokasi"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
                                 android:textStyle="bold" />
@@ -273,7 +272,7 @@
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="SURVEY DESTINASI"
+                                android:text="@string/survey_destinasi"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
                                 android:textStyle="bold" />
@@ -309,7 +308,7 @@
                                 android:layout_width="110dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="PROFILE"
+                                android:text="@string/profile"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
                                 android:textStyle="bold" />

@@ -48,6 +48,16 @@
     <string name="logout">Logout</string>
 
     <string name="close">close</string>
+    <string name="lokasi">LOKASI</string>
+    <string name="about_us">ABOUT US</string>
+    <string name="riwayat_pemesanan">RIWAYAT PEMESANAN</string>
+    <string name="pesan">PESAN</string>
+<!--    <string name="list_destinasi">LIST DESTINASI</string>-->
+    <string name="welcome_marshanda">Welcome, MARSHANDA</string>
+    <string name="survey_destinasi">SURVEY DESTINASI</string>
+    <string name="profile">PROFILE</string>
+    <string name="destinasi_name">Nama Destinasi</string>
+    <string name="nama_pengguna">Nama Pengguna</string>
     <string-array name="penilaian">
         <item>1</item>
         <item>2</item>
